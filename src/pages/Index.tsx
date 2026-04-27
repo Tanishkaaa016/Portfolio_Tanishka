@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight, Coffee, BookOpen, Music, Heart, Sun, Moon, Zap, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import BlobCursor from "@/components/portfolio/BlobCursor";
 import Reveal from "@/components/portfolio/Reveal";
+import Typewriter from "@/components/portfolio/Typewriter";
 
 const projects = [
   { name: "Geneatlas", tag: "Bioinformatics", blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.", href: "https://github.com/Tanishkaaa016/Geneatlas", chips: ["Python", "Self-Attention", "SHAP"] },
@@ -24,8 +25,25 @@ const experience = [
   { date: "Apr — May 2024", role: "Content Writing Intern", org: "Kshitiksha Foundation", note: "Donation-appeal writing for a social-impact initiative." },
 ];
 
+const thisOrThat = [
+  { q: "Coffee or chai?", a: "Chai", b: "Coffee", pick: "a" as const },
+  { q: "Code or write?", a: "Code", b: "Write", pick: "b" as const, note: "Depends on the day." },
+  { q: "Lab or stage?", a: "Lab", b: "Stage", pick: "a" as const },
+  { q: "Mountains or sea?", a: "Mountains", b: "Sea", pick: "a" as const },
+  { q: "Early bird or night owl?", a: "Early", b: "Night owl", pick: "b" as const },
+];
+
 const Index = () => {
   const [activeProj, setActiveProj] = useState(0);
+  const [picks, setPicks] = useState<Record<number, "a" | "b" | null>>({});
+  const [mood, setMood] = useState<"calm" | "focus" | "spark">("calm");
+
+  const moodMap = {
+    calm: { icon: Cloud, label: "Calm", note: "Soft jazz, journaling, slow mornings.", color: "from-rose-soft/40 to-blush/60" },
+    focus: { icon: Moon, label: "Focus", note: "Headphones on, RNA-Seq pipeline running.", color: "from-paper-2 to-secondary" },
+    spark: { icon: Zap, label: "Spark", note: "Hosting an event, scripts in hand, mic checked.", color: "from-accent/70 to-rose-soft/50" },
+  };
+  const Mood = moodMap[mood].icon;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -33,8 +51,9 @@ const Index = () => {
 
       {/* Decorative blush blobs */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-32 -right-32 h-[40rem] w-[40rem] rounded-full opacity-60" style={{ background: "radial-gradient(circle, hsl(var(--blush)) 0%, transparent 65%)" }} />
-        <div className="absolute top-[60%] -left-40 h-[36rem] w-[36rem] rounded-full opacity-70" style={{ background: "radial-gradient(circle, hsl(var(--rose-soft) / 0.35) 0%, transparent 65%)" }} />
+        <div className="absolute -top-32 -right-32 h-[40rem] w-[40rem] rounded-full opacity-60 float-slower" style={{ background: "radial-gradient(circle, hsl(var(--blush)) 0%, transparent 65%)" }} />
+        <div className="absolute top-[60%] -left-40 h-[36rem] w-[36rem] rounded-full opacity-70 float-slow" style={{ background: "radial-gradient(circle, hsl(var(--rose-soft) / 0.35) 0%, transparent 65%)" }} />
+        <div className="absolute top-[30%] left-[55%] h-[20rem] w-[20rem] rounded-full opacity-40 float-slow" style={{ background: "radial-gradient(circle, hsl(var(--accent)) 0%, transparent 65%)" }} />
       </div>
 
       {/* Nav */}
@@ -44,12 +63,12 @@ const Index = () => {
             Tanishka <span className="italic text-primary">Bajpai</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-            {[["Work","#work"],["About","#about"],["Experience","#experience"],["Press","#press"],["Contact","#contact"]].map(([l,h]) => (
+            {[["Work","#work"],["About","#about"],["Currently","#currently"],["Experience","#experience"],["Press","#press"],["Contact","#contact"]].map(([l,h]) => (
               <li key={h}><a href={h} className="hover:text-foreground transition-colors">{l}</a></li>
             ))}
           </ul>
           <Button asChild size="sm" className="rounded-full bg-foreground text-background hover:bg-foreground/90">
-            <a href="#contact">Let's talk <ArrowUpRight className="ml-1 h-4 w-4" /></a>
+            <a href="#contact">Say hi <ArrowUpRight className="ml-1 h-4 w-4" /></a>
           </Button>
         </nav>
       </header>
@@ -61,24 +80,36 @@ const Index = () => {
             <span className="h-1.5 w-1.5 rounded-full bg-rose animate-pulse" /> Open to research roles & internships
           </Badge>
         </Reveal>
-        <Reveal delay={80}>
-          <h1 className="font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight">
-            Building <em className="text-primary font-normal">gentle</em>
+
+        <Reveal delay={60}>
+          <p className="font-display text-2xl md:text-3xl text-muted-foreground mb-4">
+            Hi, I'm Tanishka — a&nbsp;
+            <Typewriter
+              className="text-primary italic"
+              words={["biomedical student.", "writer.", "tinkerer.", "host & emcee.", "ML hobbyist.", "quiet over-thinker."]}
+            />
+          </p>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <h1 className="font-display text-[clamp(2.6rem,8vw,6.5rem)] leading-[0.95] tracking-tight">
+            Building <em className="text-primary font-normal">gentle</em> tools
             <br />
-            tools for <span className="italic">hard</span> medicine.
+            for <span className="squiggle">hard medicine.</span>
           </h1>
         </Reveal>
-        <Reveal delay={160}>
+
+        <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Biomedical Engineering student at SRMIST specialising in Machine Intelligence. I work on bioinformatics, computational oncology, and clean biomedical signal pipelines — with a side of writing and hosting.
+              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. I like problems that sit at the messy edge of biology, code and good writing.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-                <a href="#work">See selected work</a>
+                <a href="#work">See my work</a>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
-                <a href="/resume.pdf"><FileText className="mr-2 h-4 w-4" /> Résumé</a>
+                <a href="#contact"><Mail className="mr-2 h-4 w-4" /> Get in touch</a>
               </Button>
             </div>
           </div>
@@ -92,11 +123,22 @@ const Index = () => {
               ["5", "Leadership roles"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
-              <div key={l} className="bg-card p-6">
+              <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
                 <div className="font-display text-3xl">{n}</div>
                 <div className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">{l}</div>
               </div>
             ))}
+          </div>
+        </Reveal>
+
+        {/* Stickers row */}
+        <Reveal delay={300}>
+          <div className="mt-10 flex flex-wrap items-center gap-2">
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground mr-2">/ Right now</span>
+            <span className="sticker"><Coffee className="h-3.5 w-3.5" /> chai #2</span>
+            <span className="sticker"><BookOpen className="h-3.5 w-3.5" /> reading: Emperor of All Maladies</span>
+            <span className="sticker"><Music className="h-3.5 w-3.5" /> on loop: Bon Iver</span>
+            <span className="sticker"><Heart className="h-3.5 w-3.5" /> happy you're here</span>
           </div>
         </Reveal>
       </section>
@@ -131,7 +173,6 @@ const Index = () => {
           </div>
         </Reveal>
 
-        {/* Featured split */}
         <Reveal>
           <div className="grid md:grid-cols-5 gap-0 rounded-3xl overflow-hidden border border-border bg-card shadow-[var(--shadow-soft)]">
             <ul className="md:col-span-2 divide-y divide-border">
@@ -139,6 +180,7 @@ const Index = () => {
                 <li key={p.name}>
                   <button
                     onClick={() => setActiveProj(i)}
+                    onMouseEnter={() => setActiveProj(i)}
                     data-cursor="hover"
                     className={`w-full text-left px-6 py-5 transition-colors ${activeProj === i ? "bg-accent/50" : "hover:bg-secondary/60"}`}
                   >
@@ -183,8 +225,8 @@ const Index = () => {
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm a second-year B.Tech student in Biomedical Engineering with a Machine Intelligence specialisation. My favourite problems sit where genomics, ML, and clean engineering meet.</p>
-              <p>Outside the lab I host events, write, and occasionally look up at the night sky.</p>
+              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. I grew up writing little stories, fell in love with biology in school, and somewhere along the way realised I could mash all of it together with code.</p>
+              <p>I host events when I'm feeling brave, write essays when I'm feeling quiet, and read too many cancer-research papers for someone who's supposed to be relaxing.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
@@ -200,24 +242,127 @@ const Index = () => {
                 {["Python","MATLAB","C","Flask","XGBoost","SHAP","PyTorch-ish","HTML/CSS","AutoCAD"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Emceeing","Content writing","Script writing","MUN","Event ops","Languages: HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Emceeing","Content writing","Script writing","MUN","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-3">
-              <div className="card-paper flex items-start gap-3">
+              <div className="card-paper flex items-start gap-3 tilt">
                 <GraduationCap className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">B.Tech BME (MI)</div>
                   <div className="text-xs text-muted-foreground">SRMIST Chennai · 2023–2028 · CGPA 9.0</div>
                 </div>
               </div>
-              <div className="card-paper flex items-start gap-3">
+              <div className="card-paper flex items-start gap-3 tilt">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">Bengaluru / Chennai</div>
                   <div className="text-xs text-muted-foreground">Open to remote & relocation</div>
                 </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CURRENTLY — interactive mood + this-or-that */}
+      <section id="currently" className="mx-auto max-w-6xl px-6 py-24">
+        <Reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ A little more personal</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-10">The unserious bits.</h2>
+        </Reveal>
+
+        <div className="grid md:grid-cols-12 gap-6">
+          {/* Mood picker */}
+          <Reveal className="md:col-span-5">
+            <div className={`relative overflow-hidden rounded-3xl border border-border p-8 bg-gradient-to-br ${moodMap[mood].color} grain min-h-[280px]`}>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Today's mood</div>
+              <div className="flex items-center gap-3">
+                <Mood className="h-8 w-8 text-primary" />
+                <span className="font-display text-3xl">{moodMap[mood].label}</span>
+              </div>
+              <p className="mt-3 text-sm text-foreground/70 max-w-xs">{moodMap[mood].note}</p>
+              <div className="mt-6 flex gap-2">
+                {(["calm","focus","spark"] as const).map((m) => (
+                  <button
+                    key={m}
+                    onClick={() => setMood(m)}
+                    data-cursor="hover"
+                    className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${mood === m ? "bg-foreground text-background" : "bg-background/60 hover:bg-background"}`}
+                  >
+                    {m}
+                  </button>
+                ))}
+              </div>
+              <Sun className="absolute -bottom-6 -right-6 h-32 w-32 text-primary/15" />
+            </div>
+          </Reveal>
+
+          {/* This or that */}
+          <Reveal className="md:col-span-7" delay={120}>
+            <div className="rounded-3xl border border-border bg-card p-8">
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-1">/ This or that</div>
+                  <div className="font-display text-2xl">Guess my pick →</div>
+                </div>
+                <span className="text-xs text-muted-foreground">{Object.keys(picks).length}/{thisOrThat.length}</span>
+              </div>
+              <ul className="space-y-3">
+                {thisOrThat.map((row, i) => {
+                  const chosen = picks[i];
+                  const correct = chosen && chosen === row.pick;
+                  return (
+                    <li key={i} className="grid grid-cols-[1fr_auto_auto] items-center gap-3">
+                      <span className="text-sm text-muted-foreground">{row.q}</span>
+                      {(["a","b"] as const).map((side) => {
+                        const label = side === "a" ? row.a : row.b;
+                        const isPick = chosen === side;
+                        const reveal = chosen != null;
+                        const isAnswer = row.pick === side;
+                        return (
+                          <button
+                            key={side}
+                            onClick={() => setPicks((p) => ({ ...p, [i]: side }))}
+                            data-cursor="hover"
+                            className={`rounded-full px-4 py-1.5 text-xs font-medium border transition-all ${
+                              reveal && isAnswer ? "bg-primary text-primary-foreground border-primary" :
+                              isPick ? "bg-foreground text-background border-foreground" :
+                              "bg-background border-border hover:bg-secondary"
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        );
+                      })}
+                    </li>
+                  );
+                })}
+              </ul>
+              {Object.keys(picks).length === thisOrThat.length && (
+                <p className="mt-5 text-sm text-primary font-medium">
+                  Score: {Object.entries(picks).filter(([i, v]) => thisOrThat[+i].pick === v).length} / {thisOrThat.length} — pink answers are mine ✨
+                </p>
+              )}
+            </div>
+          </Reveal>
+
+          {/* Manifesto / values */}
+          <Reveal className="md:col-span-12" delay={180}>
+            <div className="rounded-3xl border border-border bg-paper-2/60 p-8 md:p-10">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">/ Tiny manifesto</div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { t: "Soft, not slow.", d: "Calm interfaces and warm writing can still ship hard science." },
+                  { t: "Data with a story.", d: "A model is just a paragraph the computer wrote — make it readable." },
+                  { t: "Stay a beginner.", d: "I'd rather ask the dumb question than fake the smart answer." },
+                ].map((m) => (
+                  <div key={m.t} className="tilt">
+                    <div className="font-display text-xl mb-1">{m.t}</div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">{m.d}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </Reveal>
@@ -276,7 +421,7 @@ const Index = () => {
             { icon: Sparkles, title: "MUN Organiser", sub: "Inter & intra-school conferences" },
           ].map(({ icon: Icon, title, sub }) => (
             <Reveal key={title}>
-              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
+              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
                 <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
                   <Icon className="h-5 w-5 text-primary" />
                 </div>
@@ -291,7 +436,7 @@ const Index = () => {
       {/* QUOTE */}
       <section className="mx-auto max-w-4xl px-6 py-16">
         <Reveal>
-          <div className="rounded-3xl p-10 md:p-14 text-center" style={{ background: "var(--gradient-blush)" }}>
+          <div className="rounded-3xl p-10 md:p-14 text-center relative overflow-hidden grain" style={{ background: "var(--gradient-blush)" }}>
             <Quote className="h-6 w-6 text-primary mx-auto mb-4" />
             <p className="font-display italic text-2xl md:text-3xl leading-snug">
               The best science still needs a good story to land.
@@ -308,17 +453,17 @@ const Index = () => {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Have a project, paper, or stage to host? <em className="text-primary">Let's chat.</em>
+                Got a project, paper, or stage to host? <em className="text-primary">Let's chat.</em>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-md">
-                Replies usually arrive within a day. Research collaborations, internships, and event hosting all welcome.
+                I read every email. Research collaborations, internships, writing gigs and event hosting all welcome.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                   <a href="mailto:tanishkabajpai2005@gmail.com"><Mail className="mr-2 h-4 w-4" /> Send an email</a>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
-                  <a href="#" >Book a 15-min call</a>
+                  <a href="https://github.com/Tanishkaaa016" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" /> GitHub</a>
                 </Button>
               </div>
             </Reveal>
