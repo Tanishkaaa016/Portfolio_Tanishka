@@ -124,6 +124,16 @@ All colors MUST be HSL.
     font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
     font-feature-settings: "ss01", "liga";
   }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marquee-track, .float-slow, .float-slower { animation: none !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    body { cursor: auto; }
+    .blob-cursor, .blob-dot { display: none !important; }
+  }
 }
 
 @layer components {
