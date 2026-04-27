@@ -125,8 +125,8 @@ const Index = () => {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
               ["9.0", "Current CGPA"],
-              ["6+", "Shipped projects"],
-              ["5", "Leadership roles"],
+              [`${projects.length}`, "Shipped projects"],
+              ["3", "Languages spoken"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
@@ -302,17 +302,36 @@ const Index = () => {
       {/* PRESS / RECOGNITION */}
       <section id="press" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
-          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Recognition</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Accomplishments</div>
           <h2 className="font-display text-4xl md:text-5xl mb-10">Small wins, kept close.</h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
           {[
             { icon: Award, title: "2nd Runner-Up", sub: "PCB Design & Fabrication — TekMedica, SRMIST" },
-            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025" },
-            { icon: Cpu, title: "BIO101", sub: "Molecular & Cellular Biology · Saylor Academy" },
             { icon: FileText, title: "Published — Anthology", sub: "Literary publication, 2021" },
             { icon: Mic, title: "Emcee — SRM Hackathon 2025", sub: "Hosted SRMIST flagship event" },
             { icon: Sparkles, title: "MUN Organiser", sub: "Inter & intra-school conferences" },
+          ].map(({ icon: Icon, title, sub }) => (
+            <Reveal key={title}>
+              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
+                <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
+                  <Icon className="h-5 w-5 text-primary" />
+                </div>
+                <div className="font-display text-lg leading-snug">{title}</div>
+                <div className="text-sm text-muted-foreground mt-1">{sub}</div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 mt-20">/ Certifications</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-10">Coursework, certified.</h2>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-5">
+          {[
+            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025" },
+            { icon: Cpu, title: "BIO101", sub: "Molecular & Cellular Biology · Saylor Academy" },
           ].map(({ icon: Icon, title, sub }) => (
             <Reveal key={title}>
               <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
