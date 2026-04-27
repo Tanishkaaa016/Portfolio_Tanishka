@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight, Coffee, BookOpen, Music, Heart, Sun, Moon, Zap, Cloud } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -26,34 +26,16 @@ const experience = [
   { date: "Apr — May 2024", role: "Content Writing Intern", org: "Kshitiksha Foundation", note: "Donation-appeal writing for a social-impact initiative." },
 ];
 
-const thisOrThat = [
-  { q: "Coffee or chai?", a: "Chai", b: "Coffee", pick: "a" as const },
-  { q: "Code or write?", a: "Code", b: "Write", pick: "b" as const, note: "Depends on the day." },
-  { q: "Lab or stage?", a: "Lab", b: "Stage", pick: "a" as const },
-  { q: "Mountains or sea?", a: "Mountains", b: "Sea", pick: "a" as const },
-  { q: "Early bird or night owl?", a: "Early", b: "Night owl", pick: "b" as const },
-];
-
 const Index = () => {
   const [activeProj, setActiveProj] = useState(0);
-  const [picks, setPicks] = useState<Record<number, "a" | "b" | null>>({});
-  const [mood, setMood] = useState<"calm" | "focus" | "spark">("calm");
   const navItems: [string, string][] = [
     ["Work", "work"],
     ["About", "about"],
-    ["Currently", "currently"],
     ["Experience", "experience"],
     ["Press", "press"],
     ["Contact", "contact"],
   ];
   const active = useActiveSection(["top", ...navItems.map(([, id]) => id)]);
-
-  const moodMap = {
-    calm: { icon: Cloud, label: "Calm", note: "Soft jazz, journaling, slow mornings.", color: "from-rose-soft/40 to-blush/60" },
-    focus: { icon: Moon, label: "Focus", note: "Headphones on, RNA-Seq pipeline running.", color: "from-paper-2 to-secondary" },
-    spark: { icon: Zap, label: "Spark", note: "Hosting an event, scripts in hand, mic checked.", color: "from-accent/70 to-rose-soft/50" },
-  };
-  const Mood = moodMap[mood].icon;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -155,16 +137,6 @@ const Index = () => {
           </div>
         </Reveal>
 
-        {/* Stickers row */}
-        <Reveal delay={300}>
-          <div className="mt-10 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground mr-2">/ Right now</span>
-            <span className="sticker"><Coffee className="h-3.5 w-3.5" /> chai #2</span>
-            <span className="sticker"><BookOpen className="h-3.5 w-3.5" /> reading: Emperor of All Maladies</span>
-            <span className="sticker"><Music className="h-3.5 w-3.5" /> on loop: Bon Iver</span>
-            <span className="sticker"><Heart className="h-3.5 w-3.5" /> happy you're here</span>
-          </div>
-        </Reveal>
       </section>
 
       {/* MARQUEE */}
@@ -291,108 +263,6 @@ const Index = () => {
       </section>
 
       {/* CURRENTLY — interactive mood + this-or-that */}
-      <section id="currently" className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal>
-          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ A little more personal</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-10">The unserious bits.</h2>
-        </Reveal>
-
-        <div className="grid md:grid-cols-12 gap-6">
-          {/* Mood picker */}
-          <Reveal className="md:col-span-5">
-            <div className={`relative overflow-hidden rounded-3xl border border-border p-8 bg-gradient-to-br ${moodMap[mood].color} grain min-h-[280px]`}>
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Today's mood</div>
-              <div className="flex items-center gap-3">
-                <Mood className="h-8 w-8 text-primary" />
-                <span className="font-display text-3xl">{moodMap[mood].label}</span>
-              </div>
-              <p className="mt-3 text-sm text-foreground/70 max-w-xs">{moodMap[mood].note}</p>
-              <div className="mt-6 flex gap-2">
-                {(["calm","focus","spark"] as const).map((m) => (
-                  <button
-                    key={m}
-                    onClick={() => setMood(m)}
-                    data-cursor="hover"
-                    className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${mood === m ? "bg-foreground text-background" : "bg-background/60 hover:bg-background"}`}
-                  >
-                    {m}
-                  </button>
-                ))}
-              </div>
-              <Sun className="absolute -bottom-6 -right-6 h-32 w-32 text-primary/15" />
-            </div>
-          </Reveal>
-
-          {/* This or that */}
-          <Reveal className="md:col-span-7" delay={120}>
-            <div className="rounded-3xl border border-border bg-card p-8">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-1">/ This or that</div>
-                  <div className="font-display text-2xl">Guess my pick →</div>
-                </div>
-                <span className="text-xs text-muted-foreground">{Object.keys(picks).length}/{thisOrThat.length}</span>
-              </div>
-              <ul className="space-y-3">
-                {thisOrThat.map((row, i) => {
-                  const chosen = picks[i];
-                  const correct = chosen && chosen === row.pick;
-                  return (
-                    <li key={i} className="grid grid-cols-[1fr_auto_auto] items-center gap-3">
-                      <span className="text-sm text-muted-foreground">{row.q}</span>
-                      {(["a","b"] as const).map((side) => {
-                        const label = side === "a" ? row.a : row.b;
-                        const isPick = chosen === side;
-                        const reveal = chosen != null;
-                        const isAnswer = row.pick === side;
-                        return (
-                          <button
-                            key={side}
-                            onClick={() => setPicks((p) => ({ ...p, [i]: side }))}
-                            data-cursor="hover"
-                            className={`rounded-full px-4 py-1.5 text-xs font-medium border transition-all ${
-                              reveal && isAnswer ? "bg-primary text-primary-foreground border-primary" :
-                              isPick ? "bg-foreground text-background border-foreground" :
-                              "bg-background border-border hover:bg-secondary"
-                            }`}
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
-                    </li>
-                  );
-                })}
-              </ul>
-              {Object.keys(picks).length === thisOrThat.length && (
-                <p className="mt-5 text-sm text-primary font-medium">
-                  Score: {Object.entries(picks).filter(([i, v]) => thisOrThat[+i].pick === v).length} / {thisOrThat.length} — pink answers are mine ✨
-                </p>
-              )}
-            </div>
-          </Reveal>
-
-          {/* Manifesto / values */}
-          <Reveal className="md:col-span-12" delay={180}>
-            <div className="rounded-3xl border border-border bg-paper-2/60 p-8 md:p-10">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">/ Tiny manifesto</div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { t: "Soft, not slow.", d: "Calm interfaces and warm writing can still ship hard science." },
-                  { t: "Data with a story.", d: "A model is just a paragraph the computer wrote — make it readable." },
-                  { t: "Stay a beginner.", d: "I'd rather ask the dumb question than fake the smart answer." },
-                ].map((m) => (
-                  <div key={m.t} className="tilt">
-                    <div className="font-display text-xl mb-1">{m.t}</div>
-                    <div className="text-sm text-muted-foreground leading-relaxed">{m.d}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* EXPERIENCE — accordion */}
       <section id="experience" className="bg-paper-2/50 border-y border-border">
         <div className="mx-auto max-w-6xl px-6 py-24">
