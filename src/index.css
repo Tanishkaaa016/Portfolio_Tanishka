@@ -8,35 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Soft pink editorial palette */
+    --background: 24 40% 97%;            /* warm cream */
+    --foreground: 340 18% 18%;           /* deep mauve ink */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 340 18% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 340 18% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 345 55% 55%;              /* dusty rose */
+    --primary-foreground: 24 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 20 35% 92%;             /* blush */
+    --secondary-foreground: 340 18% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 20 30% 94%;
+    --muted-foreground: 340 10% 42%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 350 70% 88%;               /* soft pink accent */
+    --accent-foreground: 340 30% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 25% 88%;
+    --input: 340 25% 88%;
+    --ring: 345 55% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Editorial extras */
+    --blush: 12 60% 90%;
+    --rose: 345 55% 55%;
+    --rose-soft: 350 70% 80%;
+    --ink: 340 22% 16%;
+    --paper: 24 40% 97%;
+    --paper-2: 20 45% 94%;
+    --sage: 140 18% 60%;
+
+    --shadow-soft: 0 20px 50px -20px hsl(345 40% 60% / 0.25);
+    --shadow-card: 0 8px 30px -12px hsl(340 30% 40% / 0.12);
+    --gradient-blush: linear-gradient(135deg, hsl(20 60% 95%), hsl(350 70% 92%));
+    --gradient-rose: linear-gradient(135deg, hsl(345 70% 75%), hsl(15 75% 80%));
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +115,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    cursor: none;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-feature-settings: "ss01", "liga";
   }
 }
+
+@layer components {
+  .editorial-rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs tracking-wide text-foreground/70;
+  }
+  .chip-soft {
+    @apply inline-flex items-center rounded-full bg-accent/60 px-2.5 py-1 text-[11px] font-medium text-accent-foreground;
+  }
+  .card-paper {
+    @apply rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)];
+  }
+}
+
+/* Blob cursor */
+.blob-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 26px; height: 26px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, hsl(var(--rose) / 0.55), hsl(var(--rose) / 0.15) 70%, transparent 75%);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .25s ease, height .25s ease, background .25s ease;
+  mix-blend-mode: multiply;
+}
+.blob-cursor.is-hover {
+  width: 56px; height: 56px;
+  background: radial-gradient(circle at 35% 35%, hsl(var(--rose) / 0.35), hsl(var(--rose) / 0.08) 70%, transparent 75%);
+}
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .blob-cursor { display: none; }
+}
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 28s linear infinite; }
