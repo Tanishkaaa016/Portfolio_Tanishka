@@ -137,16 +137,6 @@ const Index = () => {
           </div>
         </Reveal>
 
-        {/* Stickers row */}
-        <Reveal delay={300}>
-          <div className="mt-10 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground mr-2">/ Right now</span>
-            <span className="sticker"><Coffee className="h-3.5 w-3.5" /> chai #2</span>
-            <span className="sticker"><BookOpen className="h-3.5 w-3.5" /> reading: Emperor of All Maladies</span>
-            <span className="sticker"><Music className="h-3.5 w-3.5" /> on loop: Bon Iver</span>
-            <span className="sticker"><Heart className="h-3.5 w-3.5" /> happy you're here</span>
-          </div>
-        </Reveal>
       </section>
 
       {/* MARQUEE */}
