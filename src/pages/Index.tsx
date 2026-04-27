@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import BlobCursor from "@/components/portfolio/BlobCursor";
 import Reveal from "@/components/portfolio/Reveal";
 import Typewriter from "@/components/portfolio/Typewriter";
+import useActiveSection from "@/components/portfolio/useActiveSection";
 
 const projects = [
   { name: "Geneatlas", tag: "Bioinformatics", blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.", href: "https://github.com/Tanishkaaa016/Geneatlas", chips: ["Python", "Self-Attention", "SHAP"] },
@@ -37,6 +38,15 @@ const Index = () => {
   const [activeProj, setActiveProj] = useState(0);
   const [picks, setPicks] = useState<Record<number, "a" | "b" | null>>({});
   const [mood, setMood] = useState<"calm" | "focus" | "spark">("calm");
+  const navItems: [string, string][] = [
+    ["Work", "work"],
+    ["About", "about"],
+    ["Currently", "currently"],
+    ["Experience", "experience"],
+    ["Press", "press"],
+    ["Contact", "contact"],
+  ];
+  const active = useActiveSection(["top", ...navItems.map(([, id]) => id)]);
 
   const moodMap = {
     calm: { icon: Cloud, label: "Calm", note: "Soft jazz, journaling, slow mornings.", color: "from-rose-soft/40 to-blush/60" },
@@ -63,9 +73,23 @@ const Index = () => {
             Tanishka <span className="italic text-primary">Bajpai</span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-            {[["Work","#work"],["About","#about"],["Currently","#currently"],["Experience","#experience"],["Press","#press"],["Contact","#contact"]].map(([l,h]) => (
-              <li key={h}><a href={h} className="hover:text-foreground transition-colors">{l}</a></li>
-            ))}
+            {navItems.map(([label, id]) => {
+              const isActive = active === id;
+              return (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    aria-current={isActive ? "true" : undefined}
+                    className={`relative transition-colors ${isActive ? "text-foreground" : "hover:text-foreground"}`}
+                  >
+                    {label}
+                    <span
+                      className={`pointer-events-none absolute -bottom-1 left-0 h-[2px] rounded-full bg-primary transition-all duration-300 ${isActive ? "w-full opacity-100" : "w-0 opacity-0"}`}
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <Button asChild size="sm" className="rounded-full bg-foreground text-background hover:bg-foreground/90">
             <a href="#contact">Say hi <ArrowUpRight className="ml-1 h-4 w-4" /></a>
