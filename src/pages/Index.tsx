@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight, Coffee, BookOpen, Music, Heart, Sun, Moon, Zap, Cloud } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -26,34 +26,16 @@ const experience = [
   { date: "Apr — May 2024", role: "Content Writing Intern", org: "Kshitiksha Foundation", note: "Donation-appeal writing for a social-impact initiative." },
 ];
 
-const thisOrThat = [
-  { q: "Coffee or chai?", a: "Chai", b: "Coffee", pick: "a" as const },
-  { q: "Code or write?", a: "Code", b: "Write", pick: "b" as const, note: "Depends on the day." },
-  { q: "Lab or stage?", a: "Lab", b: "Stage", pick: "a" as const },
-  { q: "Mountains or sea?", a: "Mountains", b: "Sea", pick: "a" as const },
-  { q: "Early bird or night owl?", a: "Early", b: "Night owl", pick: "b" as const },
-];
-
 const Index = () => {
   const [activeProj, setActiveProj] = useState(0);
-  const [picks, setPicks] = useState<Record<number, "a" | "b" | null>>({});
-  const [mood, setMood] = useState<"calm" | "focus" | "spark">("calm");
   const navItems: [string, string][] = [
     ["Work", "work"],
     ["About", "about"],
-    ["Currently", "currently"],
     ["Experience", "experience"],
     ["Press", "press"],
     ["Contact", "contact"],
   ];
   const active = useActiveSection(["top", ...navItems.map(([, id]) => id)]);
-
-  const moodMap = {
-    calm: { icon: Cloud, label: "Calm", note: "Soft jazz, journaling, slow mornings.", color: "from-rose-soft/40 to-blush/60" },
-    focus: { icon: Moon, label: "Focus", note: "Headphones on, RNA-Seq pipeline running.", color: "from-paper-2 to-secondary" },
-    spark: { icon: Zap, label: "Spark", note: "Hosting an event, scripts in hand, mic checked.", color: "from-accent/70 to-rose-soft/50" },
-  };
-  const Mood = moodMap[mood].icon;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
