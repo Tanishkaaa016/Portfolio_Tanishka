@@ -1,16 +1,374 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import BlobCursor from "@/components/portfolio/BlobCursor";
+import Reveal from "@/components/portfolio/Reveal";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const projects = [
+  { name: "Geneatlas", tag: "Bioinformatics", blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.", href: "https://github.com/Tanishkaaa016/Geneatlas", chips: ["Python", "Self-Attention", "SHAP"] },
+  { name: "Medpath", tag: "Clinical ML", blurb: "Symptom-to-diagnosis triage app powered by an ANN model and Flask.", href: "https://github.com/Tanishkaaa016/Medpath", chips: ["Flask", "ANN"] },
+  { name: "EEG Seizure Detection", tag: "Signals", blurb: "Random Forest baseline → XGBoost on segmented EEG features.", href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement", chips: ["XGBoost", "EEG"] },
+  { name: "ECG Filtering", tag: "Biomedical", blurb: "Cardiac signal cleanup with low/high-pass filters in MATLAB.", href: "https://github.com/Tanishkaaa016/ECG-Signal-Filtering-Analysis", chips: ["MATLAB", "DSP"] },
+  { name: "Iris ANN — Web", tag: "Deployment", blurb: "End-to-end MLP classifier deployed via a tidy Flask interface.", href: "https://github.com/Tanishkaaa016/Iris-ANN-classifier", chips: ["Flask", "MLP"] },
+  { name: "Demodulation Lab", tag: "Simulation", blurb: "Homodyne/heterodyne signal recovery — interactive teaching tool.", href: "https://github.com/aryandotexe30/Signal-Demodulation-Virtual-Lab", chips: ["Python", "Sim"] },
+];
+
+const experience = [
+  { date: "Oct 2025 — Present", role: "R&D Associate Head", org: "Placfv's, SRMIST Placement Team", note: "Industry research, recruiter outreach, hiring strategy support." },
+  { date: "Jan 2025 — Present", role: "Content Member", org: "Team SRM Hackathon", note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms." },
+  { date: "Jan 2025 — Oct 2025", role: "Trainee Lead", org: "Directorate of Alumni Affairs, SRMIST", note: "Publicity, content, hosting and logistics for alumni events." },
+  { date: "Jan — Mar 2025", role: "Intern", org: "Agnirva", note: "Technical research and structured project execution." },
+  { date: "Apr — May 2024", role: "Content Writing Intern", org: "Kshitiksha Foundation", note: "Donation-appeal writing for a social-impact initiative." },
+];
+
+const Index = () => {
+  const [activeProj, setActiveProj] = useState(0);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <BlobCursor />
+
+      {/* Decorative blush blobs */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-32 -right-32 h-[40rem] w-[40rem] rounded-full opacity-60" style={{ background: "radial-gradient(circle, hsl(var(--blush)) 0%, transparent 65%)" }} />
+        <div className="absolute top-[60%] -left-40 h-[36rem] w-[36rem] rounded-full opacity-70" style={{ background: "radial-gradient(circle, hsl(var(--rose-soft) / 0.35) 0%, transparent 65%)" }} />
+      </div>
+
+      {/* Nav */}
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
+        <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+          <a href="#top" className="font-display text-lg tracking-tight">
+            Tanishka <span className="italic text-primary">Bajpai</span>
+          </a>
+          <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+            {[["Work","#work"],["About","#about"],["Experience","#experience"],["Press","#press"],["Contact","#contact"]].map(([l,h]) => (
+              <li key={h}><a href={h} className="hover:text-foreground transition-colors">{l}</a></li>
+            ))}
+          </ul>
+          <Button asChild size="sm" className="rounded-full bg-foreground text-background hover:bg-foreground/90">
+            <a href="#contact">Let's talk <ArrowUpRight className="ml-1 h-4 w-4" /></a>
+          </Button>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section id="top" className="mx-auto max-w-6xl px-6 pt-20 pb-24">
+        <Reveal>
+          <Badge variant="secondary" className="rounded-full bg-accent/70 text-accent-foreground hover:bg-accent border-0 mb-8 gap-1.5 px-3 py-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-rose animate-pulse" /> Open to research roles & internships
+          </Badge>
+        </Reveal>
+        <Reveal delay={80}>
+          <h1 className="font-display text-[clamp(3rem,9vw,7.5rem)] leading-[0.95] tracking-tight">
+            Building <em className="text-primary font-normal">gentle</em>
+            <br />
+            tools for <span className="italic">hard</span> medicine.
+          </h1>
+        </Reveal>
+        <Reveal delay={160}>
+          <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
+            <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
+              Biomedical Engineering student at SRMIST specialising in Machine Intelligence. I work on bioinformatics, computational oncology, and clean biomedical signal pipelines — with a side of writing and hosting.
+            </p>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                <a href="#work">See selected work</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
+                <a href="/resume.pdf"><FileText className="mr-2 h-4 w-4" /> Résumé</a>
+              </Button>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={240}>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+            {[
+              ["9.0", "Current CGPA"],
+              ["6+", "Shipped projects"],
+              ["5", "Leadership roles"],
+              ["2028", "B.Tech, expected"],
+            ].map(([n, l]) => (
+              <div key={l} className="bg-card p-6">
+                <div className="font-display text-3xl">{n}</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">{l}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* MARQUEE */}
+      <section aria-hidden className="border-y border-border bg-paper-2/60 overflow-hidden">
+        <div className="flex marquee-track whitespace-nowrap py-5 text-sm text-muted-foreground">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex shrink-0 items-center gap-10 pr-10">
+              {["Bioinformatics", "Computational Oncology", "Signal Processing", "Deep Learning", "RNA-Seq", "Public Speaking", "Writing", "PCB Design"].map((w) => (
+                <span key={w} className="flex items-center gap-10">
+                  <span className="font-display italic">{w}</span>
+                  <Sparkles className="h-3.5 w-3.5 text-rose" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WORK */}
+      <section id="work" className="mx-auto max-w-6xl px-6 py-24">
+        <Reveal>
+          <div className="flex items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Selected work</div>
+              <h2 className="font-display text-4xl md:text-5xl">Things I've built recently.</h2>
+            </div>
+            <a href="https://github.com/Tanishkaaa016" target="_blank" rel="noreferrer" className="hidden md:inline-flex items-center gap-1 text-sm text-primary hover:gap-2 transition-all">
+              All on GitHub <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </Reveal>
+
+        {/* Featured split */}
+        <Reveal>
+          <div className="grid md:grid-cols-5 gap-0 rounded-3xl overflow-hidden border border-border bg-card shadow-[var(--shadow-soft)]">
+            <ul className="md:col-span-2 divide-y divide-border">
+              {projects.map((p, i) => (
+                <li key={p.name}>
+                  <button
+                    onClick={() => setActiveProj(i)}
+                    data-cursor="hover"
+                    className={`w-full text-left px-6 py-5 transition-colors ${activeProj === i ? "bg-accent/50" : "hover:bg-secondary/60"}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-lg">{p.name}</span>
+                      <ChevronRight className={`h-4 w-4 transition-transform ${activeProj === i ? "translate-x-1 text-primary" : "text-muted-foreground"}`} />
+                    </div>
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">{p.tag}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="md:col-span-3 p-8 md:p-10 bg-gradient-to-br from-paper to-paper-2 flex flex-col justify-between min-h-[320px]">
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mb-3">{projects[activeProj].tag}</div>
+                <h3 className="font-display text-3xl md:text-4xl mb-4">{projects[activeProj].name}</h3>
+                <p className="text-muted-foreground max-w-md leading-relaxed">{projects[activeProj].blurb}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {projects[activeProj].chips.map((c) => (
+                    <span key={c} className="chip-soft">{c}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-8">
+                <Button asChild className="rounded-full bg-foreground text-background hover:bg-foreground/90">
+                  <a href={projects[activeProj].href} target="_blank" rel="noreferrer">View on GitHub <ArrowUpRight className="ml-1 h-4 w-4" /></a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+        <div className="grid md:grid-cols-12 gap-10">
+          <Reveal className="md:col-span-5">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight">
+              A researcher who <em className="text-primary">writes</em>, and a writer who <em className="text-primary">codes</em>.
+            </h2>
+          </Reveal>
+          <Reveal className="md:col-span-7" delay={100}>
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>I'm a second-year B.Tech student in Biomedical Engineering with a Machine Intelligence specialisation. My favourite problems sit where genomics, ML, and clean engineering meet.</p>
+              <p>Outside the lab I host events, write, and occasionally look up at the night sky.</p>
+            </div>
+
+            <Tabs defaultValue="focus" className="mt-8">
+              <TabsList className="bg-secondary rounded-full p-1">
+                <TabsTrigger value="focus" className="rounded-full data-[state=active]:bg-background">Focus</TabsTrigger>
+                <TabsTrigger value="stack" className="rounded-full data-[state=active]:bg-background">Stack</TabsTrigger>
+                <TabsTrigger value="soft" className="rounded-full data-[state=active]:bg-background">Beyond code</TabsTrigger>
+              </TabsList>
+              <TabsContent value="focus" className="pt-5 flex flex-wrap gap-2">
+                {["Bioinformatics","Computational Oncology","Signal Processing","Deep Learning","RNA-Seq","Biomarker Discovery"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+              </TabsContent>
+              <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
+                {["Python","MATLAB","C","Flask","XGBoost","SHAP","PyTorch-ish","HTML/CSS","AutoCAD"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+              </TabsContent>
+              <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
+                {["Emceeing","Content writing","Script writing","MUN","Event ops","Languages: HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+              </TabsContent>
+            </Tabs>
+
+            <div className="mt-8 grid sm:grid-cols-2 gap-3">
+              <div className="card-paper flex items-start gap-3">
+                <GraduationCap className="h-5 w-5 text-primary mt-0.5" />
+                <div>
+                  <div className="text-sm font-medium">B.Tech BME (MI)</div>
+                  <div className="text-xs text-muted-foreground">SRMIST Chennai · 2023–2028 · CGPA 9.0</div>
+                </div>
+              </div>
+              <div className="card-paper flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                <div>
+                  <div className="text-sm font-medium">Bengaluru / Chennai</div>
+                  <div className="text-xs text-muted-foreground">Open to remote & relocation</div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* EXPERIENCE — accordion */}
+      <section id="experience" className="bg-paper-2/50 border-y border-border">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <Reveal>
+            <div className="grid md:grid-cols-12 gap-10 mb-10">
+              <div className="md:col-span-5">
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Experience</div>
+                <h2 className="font-display text-4xl md:text-5xl">Where I've worked & helped out.</h2>
+              </div>
+              <p className="md:col-span-7 text-muted-foreground self-end">
+                A short, honest list — research, hosting, writing, organising. Tap to expand.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <Accordion type="single" collapsible defaultValue="item-0" className="rounded-2xl border border-border bg-card overflow-hidden">
+              {experience.map((e, i) => (
+                <AccordionItem key={i} value={`item-${i}`} className="border-b border-border last:border-0 px-6">
+                  <AccordionTrigger className="py-5 hover:no-underline">
+                    <div className="flex flex-1 items-center justify-between gap-4 pr-4">
+                      <div className="text-left">
+                        <div className="font-display text-lg">{e.role}</div>
+                        <div className="text-xs text-muted-foreground">{e.org}</div>
+                      </div>
+                      <span className="text-xs uppercase tracking-wider text-primary whitespace-nowrap">{e.date}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5">{e.note}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PRESS / RECOGNITION */}
+      <section id="press" className="mx-auto max-w-6xl px-6 py-24">
+        <Reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Recognition</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-10">Small wins, kept close.</h2>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-5">
+          {[
+            { icon: Award, title: "2nd Runner-Up", sub: "PCB Design & Fabrication — TekMedica, SRMIST" },
+            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025" },
+            { icon: Cpu, title: "BIO101", sub: "Molecular & Cellular Biology · Saylor Academy" },
+            { icon: FileText, title: "Published — Anthology", sub: "Literary publication, 2021" },
+            { icon: Mic, title: "Emcee — SRM Hackathon 2025", sub: "Hosted SRMIST flagship event" },
+            { icon: Sparkles, title: "MUN Organiser", sub: "Inter & intra-school conferences" },
+          ].map(({ icon: Icon, title, sub }) => (
+            <Reveal key={title}>
+              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
+                <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
+                  <Icon className="h-5 w-5 text-primary" />
+                </div>
+                <div className="font-display text-lg leading-snug">{title}</div>
+                <div className="text-sm text-muted-foreground mt-1">{sub}</div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* QUOTE */}
+      <section className="mx-auto max-w-4xl px-6 py-16">
+        <Reveal>
+          <div className="rounded-3xl p-10 md:p-14 text-center" style={{ background: "var(--gradient-blush)" }}>
+            <Quote className="h-6 w-6 text-primary mx-auto mb-4" />
+            <p className="font-display italic text-2xl md:text-3xl leading-snug">
+              The best science still needs a good story to land.
+            </p>
+            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">— a thing I keep saying</div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+        <div className="rounded-3xl border border-border bg-card p-8 md:p-14 shadow-[var(--shadow-soft)]">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <Reveal>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
+              <h2 className="font-display text-4xl md:text-5xl leading-tight">
+                Have a project, paper, or stage to host? <em className="text-primary">Let's chat.</em>
+              </h2>
+              <p className="mt-5 text-muted-foreground max-w-md">
+                Replies usually arrive within a day. Research collaborations, internships, and event hosting all welcome.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                  <a href="mailto:tanishkabajpai2005@gmail.com"><Mail className="mr-2 h-4 w-4" /> Send an email</a>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
+                  <a href="#" >Book a 15-min call</a>
+                </Button>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <ul className="space-y-3">
+                {[
+                  { icon: Mail, label: "Email", val: "tanishkabajpai2005@gmail.com", href: "mailto:tanishkabajpai2005@gmail.com" },
+                  { icon: Linkedin, label: "LinkedIn", val: "/in/tanishka-bajpai", href: "https://linkedin.com" },
+                  { icon: Github, label: "GitHub", val: "@Tanishkaaa016", href: "https://github.com/Tanishkaaa016" },
+                  { icon: MapPin, label: "Based in", val: "Bengaluru / Chennai, India" },
+                ].map(({ icon: Icon, label, val, href }) => {
+                  const Inner = (
+                    <>
+                      <span className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center">
+                        <Icon className="h-4 w-4 text-primary" />
+                      </span>
+                      <span className="flex-1">
+                        <span className="block text-[11px] uppercase tracking-[0.15em] text-muted-foreground">{label}</span>
+                        <span className="block text-sm">{val}</span>
+                      </span>
+                      {href && <ArrowUpRight className="h-4 w-4 text-muted-foreground" />}
+                    </>
+                  );
+                  return (
+                    <li key={label}>
+                      {href ? (
+                        <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
+                           className="flex items-center gap-4 rounded-2xl border border-border bg-background/60 px-5 py-4 hover:bg-accent/40 transition-colors">
+                          {Inner}
+                        </a>
+                      ) : (
+                        <div className="flex items-center gap-4 rounded-2xl border border-border bg-background/60 px-5 py-4">{Inner}</div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col md:flex-row gap-2 items-center justify-between text-xs text-muted-foreground">
+          <span>© {new Date().getFullYear()} Tanishka Bajpai · Built with care.</span>
+          <span className="font-display italic">Soft as paper · sharp as a scalpel.</span>
+        </div>
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
