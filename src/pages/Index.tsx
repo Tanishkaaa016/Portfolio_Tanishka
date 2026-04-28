@@ -15,7 +15,6 @@ const projects = [
   { name: "EEG Seizure Detection", tag: "Signals", blurb: "Random Forest baseline → XGBoost on segmented EEG features.", href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement", chips: ["XGBoost", "EEG"] },
   { name: "ECG Filtering", tag: "Biomedical", blurb: "Cardiac signal cleanup with low/high-pass filters in MATLAB.", href: "https://github.com/Tanishkaaa016/ECG-Signal-Filtering-Analysis", chips: ["MATLAB", "DSP"] },
   { name: "Iris ANN — Web", tag: "Deployment", blurb: "End-to-end MLP classifier deployed via a tidy Flask interface.", href: "https://github.com/Tanishkaaa016/Iris-ANN-classifier", chips: ["Flask", "MLP"] },
-  { name: "Demodulation Lab", tag: "Simulation", blurb: "Homodyne/heterodyne signal recovery — interactive teaching tool.", href: "https://github.com/aryandotexe30/Signal-Demodulation-Virtual-Lab", chips: ["Python", "Sim"] },
 ];
 
 const experience = [
@@ -122,11 +121,9 @@ const Index = () => {
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="mt-16 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
               ["9.0", "Current CGPA"],
-              [`${projects.length}`, "Shipped projects"],
-              ["3", "Languages spoken"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
