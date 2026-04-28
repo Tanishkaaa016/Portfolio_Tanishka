@@ -305,6 +305,7 @@ const Index = () => {
         <div className="grid md:grid-cols-3 gap-5">
           {[
             { icon: Award, title: "2nd Runner-Up", sub: "PCB Design & Fabrication — TekMedica, SRMIST" },
+            { icon: Award, title: "Zonal Rank Holder", sub: "International English Olympiad" },
             { icon: FileText, title: "Published — Anthology", sub: "Literary publication, 2021" },
             { icon: Mic, title: "Emcee — SRM Hackathon 2025", sub: "Hosted SRMIST flagship event" },
             { icon: Sparkles, title: "MUN Organiser", sub: "Inter & intra-school conferences" },
