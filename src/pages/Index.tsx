@@ -31,6 +31,7 @@ const Index = () => {
     ["Work", "work"],
     ["About", "about"],
     ["Experience", "experience"],
+    ["Education", "education"],
     ["Press", "press"],
     ["Contact", "contact"],
   ];
