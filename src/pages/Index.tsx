@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -115,6 +115,9 @@ const Index = () => {
               </Button>
               <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
                 <a href="#contact"><Mail className="mr-2 h-4 w-4" /> Get in touch</a>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
+                <a href="/Tanishka-Bajpai-CV.pdf" target="_blank" rel="noreferrer" download><Download className="mr-2 h-4 w-4" /> Download CV</a>
               </Button>
             </div>
           </div>
@@ -299,6 +302,32 @@ const Index = () => {
       {/* PRESS / RECOGNITION */}
       <section id="press" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Education</div>
+          <h2 className="font-display text-4xl md:text-5xl mb-10">Where I've studied.</h2>
+        </Reveal>
+        <div className="grid md:grid-cols-3 gap-5 mb-20">
+          {[
+            { title: "B.Tech — Biomedical Engineering (MI)", school: "SRM Institute of Science & Technology", date: "2023 — 2028 (expected)", score: "CGPA 9.0" },
+            { title: "Class XII — PCB + IP", school: "Vydehi School of Excellence", date: "May 2023", score: "86.8%" },
+            { title: "Class X — Science", school: "Vydehi School of Excellence", date: "May 2021", score: "93%" },
+          ].map((e) => (
+            <Reveal key={e.title}>
+              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
+                <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                </div>
+                <div className="font-display text-lg leading-snug">{e.title}</div>
+                <div className="text-sm text-muted-foreground mt-1">{e.school}</div>
+                <div className="mt-3 flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground">{e.date}</span>
+                  <span className="chip-soft">{e.score}</span>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Accomplishments</div>
           <h2 className="font-display text-4xl md:text-5xl mb-10">Small wins, kept close.</h2>
         </Reveal>
@@ -362,6 +391,9 @@ const Index = () => {
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
                   <a href="https://github.com/Tanishkaaa016" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" /> GitHub</a>
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full border-foreground/20" asChild>
+                  <a href="/Tanishka-Bajpai-CV.pdf" target="_blank" rel="noreferrer" download><Download className="mr-2 h-4 w-4" /> Download CV</a>
                 </Button>
               </div>
             </Reveal>
