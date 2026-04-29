@@ -31,6 +31,7 @@ const Index = () => {
     ["Work", "work"],
     ["About", "about"],
     ["Experience", "experience"],
+    ["Education", "education"],
     ["Press", "press"],
     ["Contact", "contact"],
   ];
@@ -299,13 +300,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PRESS / RECOGNITION */}
-      <section id="press" className="mx-auto max-w-6xl px-6 py-24">
+      {/* EDUCATION */}
+      <section id="education" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
-          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Education</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-10">Where I've studied.</h2>
+          <div className="flex items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Education</div>
+              <h2 className="font-display text-4xl md:text-5xl">Where I've studied.</h2>
+            </div>
+          </div>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-5 mb-20">
+        <div className="grid md:grid-cols-3 gap-5">
           {[
             { title: "B.Tech — Biomedical Engineering (MI)", school: "SRM Institute of Science & Technology", date: "2023 — 2028 (expected)", score: "CGPA 9.0" },
             { title: "Class XII — PCB + IP", school: "Vydehi School of Excellence", date: "May 2023", score: "86.8%" },
@@ -326,7 +331,10 @@ const Index = () => {
             </Reveal>
           ))}
         </div>
+      </section>
 
+      {/* PRESS / RECOGNITION */}
+      <section id="press" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Accomplishments</div>
           <h2 className="font-display text-4xl md:text-5xl mb-10">Small wins, kept close.</h2>
