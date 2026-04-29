@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, Quote, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Sparkles, GraduationCap, Microscope, Cpu, FileText, Award, Mic, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -342,19 +342,6 @@ const Index = () => {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      {/* QUOTE */}
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <Reveal>
-          <div className="rounded-3xl p-10 md:p-14 text-center relative overflow-hidden grain" style={{ background: "var(--gradient-blush)" }}>
-            <Quote className="h-6 w-6 text-primary mx-auto mb-4" />
-            <p className="font-display italic text-2xl md:text-3xl leading-snug">
-              The best science still needs a good story to land.
-            </p>
-            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">— a thing I keep saying</div>
-          </div>
-        </Reveal>
       </section>
 
       {/* CONTACT */}
