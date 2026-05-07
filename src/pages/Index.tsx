@@ -10,11 +10,71 @@ import Typewriter from "@/components/portfolio/Typewriter";
 import useActiveSection from "@/components/portfolio/useActiveSection";
 
 const projects = [
-  { name: "Geneatlas", tag: "Bioinformatics", blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.", href: "https://github.com/Tanishkaaa016/Geneatlas", chips: ["Python", "Self-Attention", "SHAP"] },
-  { name: "Medpath", tag: "Clinical ML", blurb: "Symptom-to-diagnosis triage app powered by an ANN model and Flask.", href: "https://github.com/Tanishkaaa016/Medpath", chips: ["Flask", "ANN"] },
-  { name: "EEG Seizure Detection", tag: "Signals", blurb: "Random Forest baseline → XGBoost on segmented EEG features.", href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement", chips: ["XGBoost", "EEG"] },
-  { name: "ECG Filtering", tag: "Biomedical", blurb: "Cardiac signal cleanup with low/high-pass filters in MATLAB.", href: "https://github.com/Tanishkaaa016/ECG-Signal-Filtering-Analysis", chips: ["MATLAB", "DSP"] },
-  { name: "Iris ANN — Web", tag: "Deployment", blurb: "End-to-end MLP classifier deployed via a tidy Flask interface.", href: "https://github.com/Tanishkaaa016/Iris-ANN-classifier", chips: ["Flask", "MLP"] },
+  {
+    name: "Geneatlas",
+    tag: "Bioinformatics",
+    blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.",
+    href: "https://github.com/Tanishkaaa016/Geneatlas",
+    chips: ["Python", "Self-Attention", "SHAP"],
+    details: [
+      "Built a deep-learning pipeline that classifies tumour samples across multiple cancer types from bulk RNA-Seq expression data.",
+      "Self-attention layer learns which genes matter for each prediction instead of treating all transcripts equally.",
+      "Used SHAP to surface the top contributing genes per class — an interpretable shortlist of candidate biomarkers for downstream review.",
+    ],
+    highlights: ["Multi-class tumour classification", "Attention over gene expression", "Interpretable biomarker shortlist"],
+  },
+  {
+    name: "Medpath",
+    tag: "Clinical ML",
+    blurb: "Symptom-to-diagnosis triage app powered by an ANN model and Flask.",
+    href: "https://github.com/Tanishkaaa016/Medpath",
+    chips: ["Flask", "ANN"],
+    details: [
+      "Trained a feed-forward neural network on a structured symptom–diagnosis dataset to suggest the most likely condition for a given symptom set.",
+      "Wrapped the model in a Flask app with a clean form-style UI so non-technical users can interact with it directly.",
+      "Designed as a learning prototype for clinical decision support — emphasises explainable inputs over black-box outputs.",
+    ],
+    highlights: ["End-to-end ML app", "Symptom-driven inference", "Friendly triage UI"],
+  },
+  {
+    name: "EEG Seizure Detection",
+    tag: "Signals",
+    blurb: "Random Forest baseline → XGBoost on segmented EEG features.",
+    href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement",
+    chips: ["XGBoost", "EEG"],
+    details: [
+      "Segmented raw EEG recordings into fixed windows and extracted time- and frequency-domain features (mean, variance, band powers).",
+      "Started with a Random Forest baseline, then improved accuracy and recall by switching to XGBoost with tuned hyperparameters.",
+      "Compared models on precision / recall to balance false alarms against missed seizure events — the metric that actually matters clinically.",
+    ],
+    highlights: ["Feature-engineered EEG", "Baseline → boosted model", "Recall-aware evaluation"],
+  },
+  {
+    name: "ECG Filtering",
+    tag: "Biomedical",
+    blurb: "Cardiac signal cleanup with low/high-pass filters in MATLAB.",
+    href: "https://github.com/Tanishkaaa016/ECG-Signal-Filtering-Analysis",
+    chips: ["MATLAB", "DSP"],
+    details: [
+      "Implemented digital low-pass and high-pass filters in MATLAB to remove baseline wander and high-frequency muscle noise from ECG traces.",
+      "Visualised raw vs. filtered signals side-by-side and inspected the frequency response of each filter.",
+      "Made R-peaks visibly cleaner, setting up the signal for downstream heart-rate and arrhythmia analysis.",
+    ],
+    highlights: ["Baseline-wander removal", "Frequency-response analysis", "Cleaner R-peaks"],
+  },
+  {
+    name: "Iris ANN — Web",
+    tag: "Deployment",
+    blurb: "End-to-end MLP classifier deployed via a tidy Flask interface.",
+    href: "https://github.com/Tanishkaaa016/Iris-ANN-classifier",
+    chips: ["Flask", "MLP"],
+    details: [
+      "Trained a small multi-layer perceptron on the classic Iris dataset and serialised the model for inference.",
+      "Built a minimal Flask app where users enter the four flower measurements and get an instant predicted species.",
+      "A bite-sized end-to-end project that covers the full ML lifecycle: data → model → serialise → serve → UI.",
+    ],
+    highlights: ["Full ML lifecycle", "Live web inference", "Minimal, focused UI"],
+  },
 ];
 
 const experience = [
@@ -194,7 +254,28 @@ const Index = () => {
               <div>
                 <div className="text-xs uppercase tracking-[0.2em] text-primary mb-3">{projects[activeProj].tag}</div>
                 <h3 className="font-display text-3xl md:text-4xl mb-4">{projects[activeProj].name}</h3>
-                <p className="text-muted-foreground max-w-md leading-relaxed">{projects[activeProj].blurb}</p>
+                <p className="text-foreground/80 max-w-xl leading-relaxed font-medium">{projects[activeProj].blurb}</p>
+
+                <div className="mt-5 space-y-3 max-w-xl">
+                  {projects[activeProj].details.map((d, i) => (
+                    <p key={i} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span>{d}</span>
+                    </p>
+                  ))}
+                </div>
+
+                <div className="mt-6">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Highlights</div>
+                  <ul className="flex flex-wrap gap-2">
+                    {projects[activeProj].highlights.map((h) => (
+                      <li key={h} className="text-xs px-2.5 py-1 rounded-full bg-accent/60 text-accent-foreground border border-border/60">
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <div className="mt-5 flex flex-wrap gap-2">
                   {projects[activeProj].chips.map((c) => (
                     <span key={c} className="chip-soft">{c}</span>
