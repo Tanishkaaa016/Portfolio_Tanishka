@@ -202,7 +202,7 @@ const Index = () => {
             Hi, I'm Tanishka — a&nbsp;
             <Typewriter
               className="text-primary italic"
-              words={["biomedical student.", "writer.", "tinkerer.", "host & emcee.", "ML hobbyist.", "quiet over-thinker."]}
+              words={["biomedical student.", "biology nerd.", "physiology fan.", "lab tinkerer.", "quiet over-thinker."]}
             />
           </p>
         </Reveal>
@@ -255,7 +255,7 @@ const Index = () => {
         <div className="flex marquee-track whitespace-nowrap py-5 text-sm text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-10 pr-10">
-              {["Bioinformatics", "Computational Oncology", "Signal Processing", "Deep Learning", "RNA-Seq", "Public Speaking", "Writing", "PCB Design"].map((w) => (
+              {["Biomedical Engineering", "Human Physiology", "Computational Oncology", "Bioinformatics", "RNA-Seq", "Signal Processing", "Biomarker Discovery", "Cell Biology"].map((w) => (
                 <span key={w} className="flex items-center gap-10">
                   <span className="font-display italic">{w}</span>
                   <Sparkles className="h-3.5 w-3.5 text-rose" />
@@ -348,13 +348,13 @@ const Index = () => {
           <Reveal className="md:col-span-5">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              A researcher who <em className="text-primary">writes</em>, and a writer who <em className="text-primary">codes</em>.
+              A <em className="text-primary">biology</em> kid learning to build <em className="text-primary">biomedical</em> tools.
             </h2>
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. I grew up writing little stories, fell in love with biology in school, and somewhere along the way realised I could mash all of it together with code.</p>
-              <p>I host events when I'm feeling brave, write essays when I'm feeling quiet, and read too many cancer-research papers for someone who's supposed to be relaxing.</p>
+              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. Biology — especially human physiology, cells and disease — is what I keep coming back to.</p>
+              <p>Most of my work sits at the edge of biology and biomedical engineering: cancer transcriptomics, biosignals, clinical decision support. I pick up a little code where it helps the science, not the other way around.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
@@ -364,13 +364,13 @@ const Index = () => {
                 <TabsTrigger value="soft" className="rounded-full data-[state=active]:bg-background">Beyond code</TabsTrigger>
               </TabsList>
               <TabsContent value="focus" className="pt-5 flex flex-wrap gap-2">
-                {["Bioinformatics","Computational Oncology","Signal Processing","Deep Learning","RNA-Seq","Biomarker Discovery"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Human Physiology","Cell & Molecular Biology","Computational Oncology","Bioinformatics","RNA-Seq","Biomarker Discovery","Biosignals","Medical Devices"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
-                {["Python","MATLAB","C","Flask","XGBoost","SHAP","PyTorch-ish","HTML/CSS","AutoCAD"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Wet-lab basics","MATLAB","Python","Flask","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Emceeing","Content writing","Script writing","MUN","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Reading papers","Note-taking","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
@@ -405,7 +405,7 @@ const Index = () => {
                 <h2 className="font-display text-4xl md:text-5xl">Where I've worked & helped out.</h2>
               </div>
               <p className="md:col-span-7 text-muted-foreground self-end">
-                A short, honest list — research, hosting, writing, organising. Tap to expand.
+                A short, honest list — mostly biomed and research-adjacent roles. Tap to expand.
               </p>
             </div>
           </Reveal>
@@ -529,10 +529,10 @@ const Index = () => {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Got a project, paper, or stage to host? <em className="text-primary">Let's chat.</em>
+                Got a biomed project or paper to share? <em className="text-primary">Let's chat.</em>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-md">
-                I read every email. Research collaborations, internships, writing gigs and event hosting all welcome.
+                I read every email. Research collaborations, lab internships and biomedical projects all welcome.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
