@@ -78,11 +78,61 @@ const projects = [
 ];
 
 const experience = [
-  { date: "Oct 2025 — Present", role: "R&D Associate Head", org: "Placfv's, SRMIST Placement Team", note: "Industry research, recruiter outreach, hiring strategy support." },
-  { date: "Jan 2025 — Present", role: "Content Member", org: "Team SRM Hackathon", note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms." },
-  { date: "Jan 2025 — Oct 2025", role: "Trainee Lead", org: "Directorate of Alumni Affairs, SRMIST", note: "Publicity, content, hosting and logistics for alumni events." },
-  { date: "Jan — Mar 2025", role: "Intern", org: "Agnirva", note: "Technical research and structured project execution." },
-  { date: "Apr — May 2024", role: "Content Writing Intern", org: "Kshitiksha Foundation", note: "Donation-appeal writing for a social-impact initiative." },
+  {
+    date: "Oct 2025 — Present",
+    role: "R&D Associate Head",
+    org: "Placfv's, SRMIST Placement Team",
+    note: "Industry research, recruiter outreach, hiring strategy support.",
+    details: [
+      "Lead a small R&D pod that maps hiring trends across biotech, healthtech and core engineering verticals to inform student prep tracks.",
+      "Coordinate recruiter outreach — drafting pitches, maintaining the company database, and following up on placement leads.",
+      "Work alongside seniors on hiring strategy: which companies to target, what skills to spotlight, and how to position SRMIST talent.",
+    ],
+  },
+  {
+    date: "Jan 2025 — Present",
+    role: "Content Member",
+    org: "Team SRM Hackathon",
+    note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms.",
+    details: [
+      "Hosted SRM Hackathon 2025 on the main stage — opening, judging rounds, and closing ceremony for a multi-day event.",
+      "Wrote emcee scripts, speaker intros, and social copy that kept the tone consistent across stage and online channels.",
+      "Supported sponsor outreach and post-event communications, helping bridge the content team with logistics and sponsorship.",
+    ],
+  },
+  {
+    date: "Jan 2025 — Oct 2025",
+    role: "Trainee Lead",
+    org: "Directorate of Alumni Affairs, SRMIST",
+    note: "Publicity, content, hosting and logistics for alumni events.",
+    details: [
+      "Helped run alumni meet-ups end-to-end: pre-event publicity, run-of-show, hosting, and on-ground coordination.",
+      "Wrote and edited content for outreach campaigns — invites, recap posts, and speaker spotlights.",
+      "Acted as a bridge between student volunteers and the directorate, escalating issues quickly during live events.",
+    ],
+  },
+  {
+    date: "Jan — Mar 2025",
+    role: "Intern",
+    org: "Agnirva",
+    note: "Technical research and structured project execution.",
+    details: [
+      "Conducted technical research on assigned topics and converted findings into structured, reviewable documents.",
+      "Followed a milestone-based delivery process — clear deadlines, scoped deliverables, and weekly check-ins.",
+      "Got first-hand exposure to how a small team scopes, builds and ships independent research projects.",
+    ],
+  },
+  {
+    date: "Apr — May 2024",
+    role: "Content Writing Intern",
+    org: "Kshitiksha Foundation",
+    note: "Donation-appeal writing for a social-impact initiative.",
+    details: [
+      "Wrote donation appeals and campaign copy for a foundation working on grassroots social-impact programmes.",
+      "Adapted tone for different audiences — emotional storytelling for individual donors, sharper framing for institutional ones.",
+      "Saw, up close, how clear writing translates directly into funds raised and lives reached.",
+    ],
+  },
 ];
 
 const Index = () => {
@@ -373,7 +423,17 @@ const Index = () => {
                       <span className="text-xs uppercase tracking-wider text-primary whitespace-nowrap">{e.date}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5">{e.note}</AccordionContent>
+                  <AccordionContent className="pb-5">
+                    <p className="text-foreground/80 mb-3 leading-relaxed">{e.note}</p>
+                    <ul className="space-y-2">
+                      {e.details.map((d, j) => (
+                        <li key={j} className="text-sm text-muted-foreground leading-relaxed flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
