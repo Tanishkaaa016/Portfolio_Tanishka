@@ -17,9 +17,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/Geneatlas",
     chips: ["Python", "Self-Attention", "SHAP"],
     details: [
-      "Built a deep-learning pipeline that classifies tumour samples across multiple cancer types from bulk RNA-Seq expression data.",
-      "Self-attention layer learns which genes matter for each prediction instead of treating all transcripts equally.",
-      "Used SHAP to surface the top contributing genes per class — an interpretable shortlist of candidate biomarkers for downstream review.",
+      "Classifies tumour samples across cancer types from bulk RNA-Seq data.",
+      "Self-attention highlights the genes driving each prediction.",
+      "SHAP surfaces a shortlist of candidate biomarkers per class.",
     ],
     highlights: ["Multi-class tumour classification", "Attention over gene expression", "Interpretable biomarker shortlist"],
   },
@@ -30,9 +30,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/Medpath",
     chips: ["Flask", "ANN"],
     details: [
-      "Trained a feed-forward neural network on a structured symptom–diagnosis dataset to suggest the most likely condition for a given symptom set.",
-      "Wrapped the model in a Flask app with a clean form-style UI so non-technical users can interact with it directly.",
-      "Designed as a learning prototype for clinical decision support — emphasises explainable inputs over black-box outputs.",
+      "ANN trained on symptom–diagnosis data to suggest likely conditions.",
+      "Served via a simple Flask form for non-technical users.",
+      "A small prototype for explainable clinical decision support.",
     ],
     highlights: ["End-to-end ML app", "Symptom-driven inference", "Friendly triage UI"],
   },
@@ -43,9 +43,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement",
     chips: ["XGBoost", "EEG"],
     details: [
-      "Segmented raw EEG recordings into fixed windows and extracted time- and frequency-domain features (mean, variance, band powers).",
-      "Started with a Random Forest baseline, then improved accuracy and recall by switching to XGBoost with tuned hyperparameters.",
-      "Compared models on precision / recall to balance false alarms against missed seizure events — the metric that actually matters clinically.",
+      "Windowed EEG signals and extracted time/frequency features.",
+      "Improved on a Random Forest baseline with tuned XGBoost.",
+      "Evaluated on recall to minimise missed seizure events.",
     ],
     highlights: ["Feature-engineered EEG", "Baseline → boosted model", "Recall-aware evaluation"],
   },
@@ -56,9 +56,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/ECG-Signal-Filtering-Analysis",
     chips: ["MATLAB", "DSP"],
     details: [
-      "Implemented digital low-pass and high-pass filters in MATLAB to remove baseline wander and high-frequency muscle noise from ECG traces.",
-      "Visualised raw vs. filtered signals side-by-side and inspected the frequency response of each filter.",
-      "Made R-peaks visibly cleaner, setting up the signal for downstream heart-rate and arrhythmia analysis.",
+      "MATLAB filters strip baseline wander and muscle noise from ECG.",
+      "Compared raw vs. filtered signals and frequency responses.",
+      "Cleaner R-peaks ready for heart-rate / arrhythmia analysis.",
     ],
     highlights: ["Baseline-wander removal", "Frequency-response analysis", "Cleaner R-peaks"],
   },
@@ -69,9 +69,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/Iris-ANN-classifier",
     chips: ["Flask", "MLP"],
     details: [
-      "Trained a small multi-layer perceptron on the classic Iris dataset and serialised the model for inference.",
-      "Built a minimal Flask app where users enter the four flower measurements and get an instant predicted species.",
-      "A bite-sized end-to-end project that covers the full ML lifecycle: data → model → serialise → serve → UI.",
+      "Small MLP trained on the classic Iris dataset.",
+      "Flask form predicts species from four measurements.",
+      "A tidy walk through the full ML lifecycle.",
     ],
     highlights: ["Full ML lifecycle", "Live web inference", "Minimal, focused UI"],
   },
@@ -84,9 +84,9 @@ const experience = [
     org: "Placfv's, SRMIST Placement Team",
     note: "Industry research, recruiter outreach, hiring strategy support.",
     details: [
-      "Lead a small R&D pod that maps hiring trends across biotech, healthtech and core engineering verticals to inform student prep tracks.",
-      "Coordinate recruiter outreach — drafting pitches, maintaining the company database, and following up on placement leads.",
-      "Work alongside seniors on hiring strategy: which companies to target, what skills to spotlight, and how to position SRMIST talent.",
+      "Map hiring trends across biotech and healthtech verticals.",
+      "Coordinate recruiter outreach and placement leads.",
+      "Support seniors on overall hiring strategy.",
     ],
   },
   {
@@ -95,9 +95,9 @@ const experience = [
     org: "Team SRM Hackathon",
     note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms.",
     details: [
-      "Hosted SRM Hackathon 2025 on the main stage — opening, judging rounds, and closing ceremony for a multi-day event.",
-      "Wrote emcee scripts, speaker intros, and social copy that kept the tone consistent across stage and online channels.",
-      "Supported sponsor outreach and post-event communications, helping bridge the content team with logistics and sponsorship.",
+      "Hosted SRM Hackathon 2025 across opening, judging and closing.",
+      "Wrote emcee scripts and speaker intros.",
+      "Helped with sponsor outreach and post-event comms.",
     ],
   },
   {
@@ -106,9 +106,9 @@ const experience = [
     org: "Directorate of Alumni Affairs, SRMIST",
     note: "Publicity, content, hosting and logistics for alumni events.",
     details: [
-      "Helped run alumni meet-ups end-to-end: pre-event publicity, run-of-show, hosting, and on-ground coordination.",
-      "Wrote and edited content for outreach campaigns — invites, recap posts, and speaker spotlights.",
-      "Acted as a bridge between student volunteers and the directorate, escalating issues quickly during live events.",
+      "Ran alumni meet-ups end-to-end: publicity, hosting, logistics.",
+      "Wrote outreach content — invites, recaps, speaker spotlights.",
+      "Bridged student volunteers and the directorate during events.",
     ],
   },
   {
@@ -117,9 +117,9 @@ const experience = [
     org: "Agnirva",
     note: "Technical research and structured project execution.",
     details: [
-      "Conducted technical research on assigned topics and converted findings into structured, reviewable documents.",
-      "Followed a milestone-based delivery process — clear deadlines, scoped deliverables, and weekly check-ins.",
-      "Got first-hand exposure to how a small team scopes, builds and ships independent research projects.",
+      "Researched assigned topics and wrote up structured findings.",
+      "Worked to milestone-based deadlines and weekly check-ins.",
+      "Saw how a small team scopes and ships research.",
     ],
   },
   {
@@ -128,9 +128,9 @@ const experience = [
     org: "Kshitiksha Foundation",
     note: "Donation-appeal writing for a social-impact initiative.",
     details: [
-      "Wrote donation appeals and campaign copy for a foundation working on grassroots social-impact programmes.",
-      "Adapted tone for different audiences — emotional storytelling for individual donors, sharper framing for institutional ones.",
-      "Saw, up close, how clear writing translates directly into funds raised and lives reached.",
+      "Wrote donation appeals for a grassroots social-impact foundation.",
+      "Adapted tone for individual vs. institutional donors.",
+      "Saw clear writing translate directly into funds raised.",
     ],
   },
 ];
@@ -218,7 +218,7 @@ const Index = () => {
         <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. I like problems that sit at the messy edge of biology, code and good writing.
+              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Drawn to biology and human physiology, with a little code on the side to make the science useful.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
