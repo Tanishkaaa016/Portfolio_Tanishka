@@ -235,9 +235,11 @@ const Index = () => {
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-16 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
               ["9.0", "Current CGPA"],
+              ["5+", "Biomed projects shipped"],
+              ["3", "Internships & leadership roles"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
