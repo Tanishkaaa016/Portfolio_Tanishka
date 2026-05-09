@@ -529,10 +529,10 @@ const Index = () => {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Got a biomed project or paper to share? <em className="text-primary">Let's chat.</em>
+                Got a biomed project or codebase to share? <em className="text-primary">Let's chat.</em>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-md">
-                I read every email. Research collaborations, lab internships and biomedical projects all welcome.
+                I read every email. Research collaborations, internships and biomed projects all welcome.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
