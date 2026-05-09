@@ -405,7 +405,7 @@ const Index = () => {
                 <h2 className="font-display text-4xl md:text-5xl">Where I've worked & helped out.</h2>
               </div>
               <p className="md:col-span-7 text-muted-foreground self-end">
-                A short, honest list — mostly biomed and research-adjacent roles. Tap to expand.
+                A short, honest list — mostly ops and research-adjacent roles. Tap to expand.
               </p>
             </div>
           </Reveal>
