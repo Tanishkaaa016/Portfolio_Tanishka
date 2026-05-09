@@ -353,8 +353,8 @@ const Index = () => {
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. Biology — especially human physiology, cells and disease — is what I keep coming back to.</p>
-              <p>Most of my work sits at the edge of biology and biomedical engineering: cancer transcriptomics, biosignals, clinical decision support. I pick up a little code where it helps the science, not the other way around.</p>
+              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. I spend most of my time coding ML pipelines, filtering biosignals and building clinical prototypes — with a little cell biology on the side.</p>
+              <p>Most of my work sits at the edge of biomedical engineering and code: cancer transcriptomics, biosignals, clinical decision support. I pick up biology where it helps the engineering, not the other way around.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
