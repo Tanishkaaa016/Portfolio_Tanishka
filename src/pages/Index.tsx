@@ -202,7 +202,7 @@ const Index = () => {
             Hi, I'm Tanishka — a&nbsp;
             <Typewriter
               className="text-primary italic"
-              words={["biomedical student.", "biology nerd.", "physiology fan.", "lab tinkerer.", "quiet over-thinker."]}
+              words={["biomedical student.", "ML tinkerer.", "signal nerd.", "quiet over-thinker."]}
             />
           </p>
         </Reveal>
