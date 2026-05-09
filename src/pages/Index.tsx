@@ -370,7 +370,7 @@ const Index = () => {
                 {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Reading papers","Note-taking","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Reading papers","Git","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
