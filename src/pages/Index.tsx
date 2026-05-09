@@ -107,7 +107,7 @@ const experience = [
     note: "Publicity, content, hosting and logistics for alumni events.",
     details: [
       "Ran alumni meet-ups end-to-end: publicity, hosting, logistics.",
-      "Wrote outreach content — invites, recaps, speaker spotlights.",
+      "Created outreach content — invites, recaps, speaker spotlights.",
       "Bridged student volunteers and the directorate during events.",
     ],
   },
