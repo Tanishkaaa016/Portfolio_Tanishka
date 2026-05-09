@@ -367,7 +367,7 @@ const Index = () => {
                 {["Machine Intelligence","Signal Processing","Clinical ML","Bioinformatics","Biosignals","Medical Devices","Biomarker Discovery","Cancer Transcriptomics"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
-                {["Wet-lab basics","MATLAB","Python","Flask","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
                 {["Reading papers","Note-taking","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
