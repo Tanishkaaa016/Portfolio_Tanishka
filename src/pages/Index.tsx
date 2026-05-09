@@ -255,7 +255,7 @@ const Index = () => {
         <div className="flex marquee-track whitespace-nowrap py-5 text-sm text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-10 pr-10">
-              {["Biomedical Engineering", "Human Physiology", "Computational Oncology", "Bioinformatics", "RNA-Seq", "Signal Processing", "Biomarker Discovery", "Cell Biology"].map((w) => (
+              {["Biomedical Engineering", "Machine Intelligence", "Signal Processing", "Bioinformatics", "Clinical ML", "Medical Devices", "Python", "MATLAB"].map((w) => (
                 <span key={w} className="flex items-center gap-10">
                   <span className="font-display italic">{w}</span>
                   <Sparkles className="h-3.5 w-3.5 text-rose" />
