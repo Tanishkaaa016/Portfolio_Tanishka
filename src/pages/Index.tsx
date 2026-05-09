@@ -128,9 +128,9 @@ const experience = [
     org: "Kshitiksha Foundation",
     note: "Donation-appeal writing for a social-impact initiative.",
     details: [
-      "Wrote donation appeals for a grassroots social-impact foundation.",
-      "Adapted tone for individual vs. institutional donors.",
-      "Saw clear writing translate directly into funds raised.",
+      "Drafted donation appeals for a grassroots foundation.",
+      "Adapted messaging for different donor segments.",
+      "Saw concise messaging translate into funds raised.",
     ],
   },
 ];
