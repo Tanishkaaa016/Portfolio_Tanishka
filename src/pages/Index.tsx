@@ -140,6 +140,7 @@ const Index = () => {
   const navItems: [string, string][] = [
     ["Work", "work"],
     ["About", "about"],
+    ["Now", "now"],
     ["Experience", "experience"],
     ["Education", "education"],
     ["Press", "press"],
@@ -235,9 +236,11 @@ const Index = () => {
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-16 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
               ["9.0", "Current CGPA"],
+              ["5+", "Biomed projects shipped"],
+              ["3", "Internships & leadership roles"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
@@ -395,6 +398,50 @@ const Index = () => {
       </section>
 
       {/* CURRENTLY — interactive mood + this-or-that */}
+      <section id="now" className="mx-auto max-w-6xl px-6 py-20">
+        <Reveal>
+          <div className="rounded-3xl border border-border bg-card p-8 md:p-12 shadow-[var(--shadow-soft)]">
+            <div className="grid md:grid-cols-12 gap-10">
+              <div className="md:col-span-5">
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Now</div>
+                <h2 className="font-display text-4xl md:text-5xl leading-tight">
+                  What I'm <em className="text-primary">learning</em> right now.
+                </h2>
+                <p className="mt-5 text-muted-foreground max-w-md">
+                  Second-year focus — building the toolkit I'll need for biomedical research and healthtech roles.
+                </p>
+              </div>
+              <div className="md:col-span-7 grid sm:grid-cols-2 gap-4">
+                {[
+                  { title: "Deep learning for medical imaging", sub: "CNNs on X-ray / MRI datasets, segmentation basics." },
+                  { title: "Biosignal pipelines", sub: "EEG & ECG preprocessing, feature extraction, classification." },
+                  { title: "Bioinformatics workflows", sub: "RNA-Seq analysis, expression matrices, interpretability with SHAP." },
+                  { title: "Medical device fundamentals", sub: "PCB design, sensor interfacing, regulatory awareness (ISO 13485 / FDA basics)." },
+                ].map((c) => (
+                  <div key={c.title} className="card-paper tilt">
+                    <div className="font-display text-base leading-snug">{c.title}</div>
+                    <div className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{c.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-3 gap-4">
+              {[
+                { k: "Research interests", v: "Computational oncology, biosignal ML, clinical decision support, medical imaging." },
+                { k: "Looking for", v: "Summer 2026 research internships, biomed/healthtech R&D roles, lab assistantships." },
+                { k: "Strengths", v: "Self-directed learner, clean documentation, comfortable across code, hardware and people." },
+              ].map((b) => (
+                <div key={b.k} className="rounded-2xl border border-border bg-background/60 p-5">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-primary mb-2">{b.k}</div>
+                  <div className="text-sm text-foreground/80 leading-relaxed">{b.v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* EXPERIENCE — accordion */}
       <section id="experience" className="bg-paper-2/50 border-y border-border">
         <div className="mx-auto max-w-6xl px-6 py-24">
