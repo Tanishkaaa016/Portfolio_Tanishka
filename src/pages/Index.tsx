@@ -96,8 +96,8 @@ const experience = [
     note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms.",
     details: [
       "Hosted SRM Hackathon 2025 across opening, judging and closing.",
-      "Wrote emcee scripts and speaker intros.",
-      "Helped with sponsor outreach and post-event comms.",
+      "Planned run-of-show and speaker introductions.",
+      "Handled sponsor outreach and post-event communications.",
     ],
   },
   {
@@ -107,7 +107,7 @@ const experience = [
     note: "Publicity, content, hosting and logistics for alumni events.",
     details: [
       "Ran alumni meet-ups end-to-end: publicity, hosting, logistics.",
-      "Wrote outreach content — invites, recaps, speaker spotlights.",
+      "Created outreach content — invites, recaps, speaker spotlights.",
       "Bridged student volunteers and the directorate during events.",
     ],
   },
@@ -117,7 +117,7 @@ const experience = [
     org: "Agnirva",
     note: "Technical research and structured project execution.",
     details: [
-      "Researched assigned topics and wrote up structured findings.",
+      "Researched assigned topics and documented structured findings.",
       "Worked to milestone-based deadlines and weekly check-ins.",
       "Saw how a small team scopes and ships research.",
     ],
@@ -128,9 +128,9 @@ const experience = [
     org: "Kshitiksha Foundation",
     note: "Donation-appeal writing for a social-impact initiative.",
     details: [
-      "Wrote donation appeals for a grassroots social-impact foundation.",
-      "Adapted tone for individual vs. institutional donors.",
-      "Saw clear writing translate directly into funds raised.",
+      "Drafted donation appeals for a grassroots foundation.",
+      "Adapted messaging for different donor segments.",
+      "Saw concise messaging translate into funds raised.",
     ],
   },
 ];
@@ -202,7 +202,7 @@ const Index = () => {
             Hi, I'm Tanishka — a&nbsp;
             <Typewriter
               className="text-primary italic"
-              words={["biomedical student.", "biology nerd.", "physiology fan.", "lab tinkerer.", "quiet over-thinker."]}
+              words={["biomedical student.", "ML tinkerer.", "signal nerd.", "quiet over-thinker."]}
             />
           </p>
         </Reveal>
@@ -218,7 +218,7 @@ const Index = () => {
         <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Drawn to biology and human physiology, with a little code on the side to make the science useful.
+              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Mostly building with code and biomed tools, with a little biology on the side.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
@@ -255,7 +255,7 @@ const Index = () => {
         <div className="flex marquee-track whitespace-nowrap py-5 text-sm text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-10 pr-10">
-              {["Biomedical Engineering", "Human Physiology", "Computational Oncology", "Bioinformatics", "RNA-Seq", "Signal Processing", "Biomarker Discovery", "Cell Biology"].map((w) => (
+              {["Biomedical Engineering", "Machine Intelligence", "Signal Processing", "Bioinformatics", "Clinical ML", "Medical Devices", "Python", "MATLAB"].map((w) => (
                 <span key={w} className="flex items-center gap-10">
                   <span className="font-display italic">{w}</span>
                   <Sparkles className="h-3.5 w-3.5 text-rose" />
@@ -348,13 +348,13 @@ const Index = () => {
           <Reveal className="md:col-span-5">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              A <em className="text-primary">biology</em> kid learning to build <em className="text-primary">biomedical</em> tools.
+              A <em className="text-primary">biomed</em> engineer learning to build <em className="text-primary">healthtech</em> tools.
             </h2>
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. Biology — especially human physiology, cells and disease — is what I keep coming back to.</p>
-              <p>Most of my work sits at the edge of biology and biomedical engineering: cancer transcriptomics, biosignals, clinical decision support. I pick up a little code where it helps the science, not the other way around.</p>
+              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. I spend most of my time coding ML pipelines, filtering biosignals and building clinical prototypes — with a little cell biology on the side.</p>
+              <p>Most of my work sits at the edge of biomedical engineering and code: cancer transcriptomics, biosignals, clinical decision support. I pick up biology where it helps the engineering, not the other way around.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
@@ -364,13 +364,13 @@ const Index = () => {
                 <TabsTrigger value="soft" className="rounded-full data-[state=active]:bg-background">Beyond code</TabsTrigger>
               </TabsList>
               <TabsContent value="focus" className="pt-5 flex flex-wrap gap-2">
-                {["Human Physiology","Cell & Molecular Biology","Computational Oncology","Bioinformatics","RNA-Seq","Biomarker Discovery","Biosignals","Medical Devices"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Machine Intelligence","Signal Processing","Clinical ML","Bioinformatics","Biosignals","Medical Devices","Biomarker Discovery","Cancer Transcriptomics"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
-                {["Wet-lab basics","MATLAB","Python","Flask","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Reading papers","Note-taking","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Reading papers","Git","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
@@ -405,7 +405,7 @@ const Index = () => {
                 <h2 className="font-display text-4xl md:text-5xl">Where I've worked & helped out.</h2>
               </div>
               <p className="md:col-span-7 text-muted-foreground self-end">
-                A short, honest list — mostly biomed and research-adjacent roles. Tap to expand.
+                A short, honest list — mostly ops and research-adjacent roles. Tap to expand.
               </p>
             </div>
           </Reveal>
@@ -529,10 +529,10 @@ const Index = () => {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Got a biomed project or paper to share? <em className="text-primary">Let's chat.</em>
+                Got a biomed project or codebase to share? <em className="text-primary">Let's chat.</em>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-md">
-                I read every email. Research collaborations, lab internships and biomedical projects all welcome.
+                I read every email. Research collaborations, internships and biomed projects all welcome.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
