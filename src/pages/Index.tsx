@@ -117,7 +117,7 @@ const experience = [
     org: "Agnirva",
     note: "Technical research and structured project execution.",
     details: [
-      "Researched assigned topics and wrote up structured findings.",
+      "Researched assigned topics and documented structured findings.",
       "Worked to milestone-based deadlines and weekly check-ins.",
       "Saw how a small team scopes and ships research.",
     ],
