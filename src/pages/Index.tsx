@@ -364,7 +364,7 @@ const Index = () => {
                 <TabsTrigger value="soft" className="rounded-full data-[state=active]:bg-background">Beyond code</TabsTrigger>
               </TabsList>
               <TabsContent value="focus" className="pt-5 flex flex-wrap gap-2">
-                {["Human Physiology","Cell & Molecular Biology","Computational Oncology","Bioinformatics","RNA-Seq","Biomarker Discovery","Biosignals","Medical Devices"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Machine Intelligence","Signal Processing","Clinical ML","Bioinformatics","Biosignals","Medical Devices","Biomarker Discovery","Cancer Transcriptomics"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
                 {["Wet-lab basics","MATLAB","Python","Flask","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
