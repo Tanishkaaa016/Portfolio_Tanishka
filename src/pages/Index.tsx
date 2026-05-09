@@ -96,8 +96,8 @@ const experience = [
     note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms.",
     details: [
       "Hosted SRM Hackathon 2025 across opening, judging and closing.",
-      "Wrote emcee scripts and speaker intros.",
-      "Helped with sponsor outreach and post-event comms.",
+      "Planned run-of-show and speaker introductions.",
+      "Handled sponsor outreach and post-event communications.",
     ],
   },
   {
