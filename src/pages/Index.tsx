@@ -348,7 +348,7 @@ const Index = () => {
           <Reveal className="md:col-span-5">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              A <em className="text-primary">biology</em> kid learning to build <em className="text-primary">biomedical</em> tools.
+              A <em className="text-primary">biomed</em> engineer learning to build <em className="text-primary">healthtech</em> tools.
             </h2>
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
