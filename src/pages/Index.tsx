@@ -202,7 +202,7 @@ const Index = () => {
             Hi, I'm Tanishka — a&nbsp;
             <Typewriter
               className="text-primary italic"
-              words={["biomedical student.", "ML tinkerer.", "signal nerd.", "quiet over-thinker."]}
+              words={["biomedical student.", "ML tinkerer.", "signal nerd.", "emcee.", "writer.", "quiet over-thinker."]}
             />
           </p>
         </Reveal>
@@ -218,7 +218,7 @@ const Index = () => {
         <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Mostly building with code and biomed tools, with a little biology on the side.
+              Second-year Biomedical Engineering @ SRMIST (Machine Intelligence). I mostly tinker with code and biomed projects, host events on the side, and write when something's worth saying.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
@@ -348,13 +348,13 @@ const Index = () => {
           <Reveal className="md:col-span-5">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              A <em className="text-primary">biomed</em> engineer learning to build <em className="text-primary">healthtech</em> tools.
+              A second-year <em className="text-primary">biomed</em> student who likes to <em className="text-primary">build, host & write.</em>
             </h2>
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm in my second year of B.Tech Biomedical Engineering with a Machine Intelligence specialisation. I spend most of my time coding ML pipelines, filtering biosignals and building clinical prototypes — with a little cell biology on the side.</p>
-              <p>Most of my work sits at the edge of biomedical engineering and code: cancer transcriptomics, biosignals, clinical decision support. I pick up biology where it helps the engineering, not the other way around.</p>
+              <p>I'm a second-year B.Tech Biomedical Engineering student at SRMIST, specialising in Machine Intelligence. Mostly I'm learning by doing — small ML projects, a bit of signal processing, and some biology when it helps.</p>
+              <p>Outside of class, I host events as an emcee and write — from hackathon scripts to donation appeals and a published anthology piece. I like projects that mix tech with people.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
@@ -370,7 +370,7 @@ const Index = () => {
                 {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Reading papers","Git","Event ops","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Hosting & emceeing","Writing","Event ops","Reading papers","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
