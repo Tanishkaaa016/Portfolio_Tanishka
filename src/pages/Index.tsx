@@ -218,7 +218,7 @@ const Index = () => {
         <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Drawn to biology and human physiology, with a little code on the side to make the science useful.
+              Biomedical Engineering @ SRMIST · specialising in Machine Intelligence. Mostly building with code and biomed tools, with a little biology on the side.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
