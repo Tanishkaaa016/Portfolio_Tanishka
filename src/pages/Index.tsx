@@ -140,7 +140,7 @@ const Index = () => {
   const navItems: [string, string][] = [
     ["Work", "work"],
     ["About", "about"],
-    ["Now", "now"],
+    
     ["Experience", "experience"],
     ["Education", "education"],
     ["Press", "press"],
