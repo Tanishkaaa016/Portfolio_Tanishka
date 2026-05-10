@@ -84,7 +84,7 @@ const experience = [
     org: "Placfv's, SRMIST Placement Team",
     note: "Industry research, recruiter outreach, hiring strategy support.",
     details: [
-      "Map hiring trends across biotech and healthtech verticals.",
+      "Map hiring trends across industries and target roles.",
       "Coordinate recruiter outreach and placement leads.",
       "Support seniors on overall hiring strategy.",
     ],
@@ -93,11 +93,11 @@ const experience = [
     date: "Jan 2025 — Present",
     role: "Content Member",
     org: "Team SRM Hackathon",
-    note: "Emcee for SRM Hackathon 2025; scripts, sponsor outreach, comms.",
+    note: "Content + emcee for SRM Hackathon 2025; scripts, copy, comms.",
     details: [
-      "Hosted SRM Hackathon 2025 across opening, judging and closing.",
-      "Planned run-of-show and speaker introductions.",
-      "Handled sponsor outreach and post-event communications.",
+      "Wrote scripts, social copy and event collateral for SRM Hackathon 2025.",
+      "Hosted the event across opening, judging and closing rounds.",
+      "Planned run-of-show, speaker intros and post-event communications.",
     ],
   },
   {
