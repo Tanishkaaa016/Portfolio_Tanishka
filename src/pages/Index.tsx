@@ -398,7 +398,7 @@ const Index = () => {
                 {[
                   { lang: "English", level: "Fluent", pct: 95 },
                   { lang: "Hindi", level: "Native", pct: 100 },
-                  { lang: "French", level: "Beginner", pct: 30 },
+                  { lang: "French", level: "Elementary", pct: 45 },
                 ].map((l) => (
                   <div key={l.lang} className="card-paper">
                     <div className="flex items-baseline justify-between">
