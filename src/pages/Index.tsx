@@ -140,7 +140,7 @@ const Index = () => {
   const navItems: [string, string][] = [
     ["Work", "work"],
     ["About", "about"],
-    ["Now", "now"],
+    
     ["Experience", "experience"],
     ["Education", "education"],
     ["Press", "press"],
@@ -236,11 +236,9 @@ const Index = () => {
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="mt-16 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
               ["9.0", "Current CGPA"],
-              ["5+", "Biomed projects shipped"],
-              ["3", "Internships & leadership roles"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
@@ -351,7 +349,7 @@ const Index = () => {
           <Reveal className="md:col-span-5">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ About</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              A second-year <em className="text-primary">biomed</em> student who likes to <em className="text-primary">build, host & write.</em>
+              A <em className="text-primary">biomed engineer</em> learning to build <em className="text-primary">healthtech tools.</em>
             </h2>
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
@@ -367,13 +365,13 @@ const Index = () => {
                 <TabsTrigger value="soft" className="rounded-full data-[state=active]:bg-background">Beyond code</TabsTrigger>
               </TabsList>
               <TabsContent value="focus" className="pt-5 flex flex-wrap gap-2">
-                {["Machine Intelligence","Signal Processing","Clinical ML","Bioinformatics","Biosignals","Medical Devices","Biomarker Discovery","Cancer Transcriptomics"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Machine Intelligence","Artificial Neural Networks","Signal Processing","Clinical ML","Bioinformatics","Biosignals","Medical Devices"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="stack" className="pt-5 flex flex-wrap gap-2">
                 {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Hosting & emceeing","Writing","Event ops","Reading papers","Hindi","English","French"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Hosting & emceeing","Writing","Event ops","Reading papers"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
@@ -393,53 +391,29 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </Reveal>
-        </div>
-      </section>
 
-      {/* CURRENTLY — interactive mood + this-or-that */}
-      <section id="now" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal>
-          <div className="rounded-3xl border border-border bg-card p-8 md:p-12 shadow-[var(--shadow-soft)]">
-            <div className="grid md:grid-cols-12 gap-10">
-              <div className="md:col-span-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Now</div>
-                <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                  What I'm <em className="text-primary">learning</em> right now.
-                </h2>
-                <p className="mt-5 text-muted-foreground max-w-md">
-                  Second-year focus — building the toolkit I'll need for biomedical research and healthtech roles.
-                </p>
-              </div>
-              <div className="md:col-span-7 grid sm:grid-cols-2 gap-4">
+            <div className="mt-6">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Language proficiency</div>
+              <div className="grid sm:grid-cols-3 gap-3">
                 {[
-                  { title: "Deep learning for medical imaging", sub: "CNNs on X-ray / MRI datasets, segmentation basics." },
-                  { title: "Biosignal pipelines", sub: "EEG & ECG preprocessing, feature extraction, classification." },
-                  { title: "Bioinformatics workflows", sub: "RNA-Seq analysis, expression matrices, interpretability with SHAP." },
-                  { title: "Medical device fundamentals", sub: "PCB design, sensor interfacing, regulatory awareness (ISO 13485 / FDA basics)." },
-                ].map((c) => (
-                  <div key={c.title} className="card-paper tilt">
-                    <div className="font-display text-base leading-snug">{c.title}</div>
-                    <div className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{c.sub}</div>
+                  { lang: "English", level: "Fluent", pct: 95 },
+                  { lang: "Hindi", level: "Native", pct: 100 },
+                  { lang: "French", level: "Conversational", pct: 55 },
+                ].map((l) => (
+                  <div key={l.lang} className="card-paper">
+                    <div className="flex items-baseline justify-between">
+                      <div className="text-sm font-medium">{l.lang}</div>
+                      <div className="text-[11px] text-muted-foreground">{l.level}</div>
+                    </div>
+                    <div className="mt-2 h-1.5 w-full rounded-full bg-secondary overflow-hidden">
+                      <div className="h-full bg-primary" style={{ width: `${l.pct}%` }} />
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="mt-10 grid md:grid-cols-3 gap-4">
-              {[
-                { k: "Research interests", v: "Computational oncology, biosignal ML, clinical decision support, medical imaging." },
-                { k: "Looking for", v: "Summer 2026 research internships, biomed/healthtech R&D roles, lab assistantships." },
-                { k: "Strengths", v: "Self-directed learner, clean documentation, comfortable across code, hardware and people." },
-              ].map((b) => (
-                <div key={b.k} className="rounded-2xl border border-border bg-background/60 p-5">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-primary mb-2">{b.k}</div>
-                  <div className="text-sm text-foreground/80 leading-relaxed">{b.v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* EXPERIENCE — accordion */}
