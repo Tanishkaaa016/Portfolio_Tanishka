@@ -357,7 +357,7 @@ const Index = () => {
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>I'm a second-year B.Tech Biomedical Engineering student at SRMIST, specialising in Machine Intelligence. Mostly I'm learning by doing — small ML projects, a bit of signal processing, and some biology when it helps.</p>
-              <p>Outside of class, I host events as an emcee and write — from hackathon scripts to donation appeals and a published anthology piece. I like projects that mix tech with people.</p>
+              <p>Outside of class, I host events as an emcee and write across different formats. I like projects that mix tech with people.</p>
             </div>
 
             <Tabs defaultValue="focus" className="mt-8">
@@ -373,7 +373,7 @@ const Index = () => {
                 {["Python","MATLAB","Flask","PyTorch","XGBoost","SHAP","AutoCAD","PCB design"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
               <TabsContent value="soft" className="pt-5 flex flex-wrap gap-2">
-                {["Hosting & emceeing","Writing","Event ops","Reading papers","HI · EN · FR"].map(s => <span key={s} className="chip-soft">{s}</span>)}
+                {["Hosting & emceeing","Writing","Event ops","Reading papers","Hindi","English","French"].map(s => <span key={s} className="chip-soft">{s}</span>)}
               </TabsContent>
             </Tabs>
 
