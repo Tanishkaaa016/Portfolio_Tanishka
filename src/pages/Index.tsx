@@ -238,7 +238,7 @@ const Index = () => {
         <Reveal delay={180}>
           <div className="mt-10 grid md:grid-cols-3 gap-8 items-end">
             <p className="md:col-span-2 text-base leading-relaxed text-muted-foreground max-w-xl">
-              Second-year Biomedical Engineering @ SRMIST (Machine Intelligence). I mostly tinker with code and biomed projects, host events on the side, and write when something's worth saying.
+              Pre-final Year Biomedical Engineering Student @ SRMIST. I mostly tinker with code and biomed projects, host events on the side, and write when something's worth saying.
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
@@ -373,7 +373,7 @@ const Index = () => {
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>I'm a second-year B.Tech Biomedical Engineering student at SRMIST, specialising in Machine Intelligence. Mostly I'm learning by doing — small ML projects, a bit of signal processing, and some biology when it helps.</p>
+              <p>I'm a third-year B.Tech Biomedical Engineering student at SRMIST, specialising in Machine Intelligence. Mostly I'm learning by doing — small ML projects, a bit of signal processing, and some biology when it helps.</p>
               <p>Outside of class, I host events as an emcee and write across different formats. I like projects that mix tech with people.</p>
             </div>
 
