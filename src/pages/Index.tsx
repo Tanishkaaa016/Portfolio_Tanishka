@@ -18,9 +18,9 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/Geneatlas",
     chips: ["Python", "Self-Attention", "SHAP"],
     details: [
-      "Classifies tumour samples across cancer types from bulk RNA-Seq data.",
-      "Self-attention highlights the genes driving each prediction.",
-      "SHAP surfaces a shortlist of candidate biomarkers per class.",
+    "Built on TCGA RNA-Seq gene-expression datasets for multi-cancer classification.",
+    "Self-attention identifies influential genes contributing to predictions.",
+    "SHAP generates interpretable biomarker candidates for each cancer class.",
     ],
     highlights: ["Multi-class tumour classification", "Attention over gene expression", "Interpretable biomarker shortlist"],
   },
@@ -31,10 +31,10 @@ const projects = [
     href: "https://github.com/Tanishkaaa016/EEG-Based-Epileptic-Seizure-Detection-Using-Sample-Entropy-and-Random-Forest-Classification",
     chips: ["Random Forest", "Sample Entropy", "EEG"],
     details: [
-      "Segmented EEG recordings and computed Sample Entropy as the core feature.",
-      "Trained a Random Forest classifier to flag seizure vs. non-seizure windows.",
-      "Evaluated with recall-focused metrics to minimise missed seizure events.",
-    ],
+    "Processed EEG recordings from publicly available seizure datasets.",
+    "Extracted entropy-based features from biosignals for seizure detection.",
+    "Trained and evaluated Random Forest models for seizure classification.",
+  ],
     highlights: ["Sample Entropy features", "Random Forest classifier", "Recall-aware evaluation"],
   },
   {
@@ -215,7 +215,14 @@ const Index = () => {
             Hi, I'm Tanishka — a&nbsp;
             <Typewriter
               className="text-primary italic"
-              words={["biomedical student.", "ML tinkerer.", "signal nerd.", "emcee.", "writer.", "quiet over-thinker."]}
+              words={[
+  "biomedical engineer.",
+  "ML tinkerer.",
+  "signal nerd.",
+  "healthtech builder.",
+  "emcee.",
+  "researcher in progress."
+]}
             />
           </p>
         </Reveal>
@@ -511,10 +518,11 @@ const Index = () => {
       <section id="press" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Accomplishments</div>
-          <h2 className="font-display text-4xl md:text-5xl mb-10">Small wins, kept close.</h2>
+          <h2 className="font-display text-4xl md:text-5xl mb-10">Research, recognition & side quests.</h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
           {[
+            { icon: FileText,  title: "Research Poster Presenter", sub: "ICB 2026 International Conference" },
             { icon: Award, title: "2nd Runner-Up", sub: "PCB Design & Fabrication — TekMedica, SRMIST" },
             { icon: Award, title: "Zonal Rank Holder", sub: "International English Olympiad" },
             { icon: FileText, title: "Published — Anthology", sub: "Literary publication, 2021" },
@@ -532,7 +540,7 @@ const Index = () => {
             </Reveal>
           ))}
         </div>
-
+        {/*
         <Reveal>
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 mt-20">/ Certifications</div>
           <h2 className="font-display text-4xl md:text-5xl mb-10">Coursework, certified.</h2>
@@ -567,6 +575,7 @@ const Index = () => {
             </Reveal>
           ))}
         </div>
+        */}
       </section>
 
       {/* CONTACT */}
@@ -576,7 +585,7 @@ const Index = () => {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">/ Contact</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Got a biomed project or codebase to share? <em className="text-primary">Let's chat.</em>
+               Working on a healthcare, AI, or biomedical project? <em className="text-primary">Let's connect.</em>
               </h2>
               <p className="mt-5 text-muted-foreground max-w-md">
                 I read every email. Research collaborations, internships and biomed projects all welcome.
