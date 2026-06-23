@@ -249,7 +249,7 @@ const Index = () => {
         <Reveal delay={240}>
           <div className="mt-16 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
             {[
-              ["9.0", "Current CGPA"],
+              ["9.03", "Current CGPA"],
               ["2028", "B.Tech, expected"],
             ].map(([n, l]) => (
               <div key={l} className="bg-card p-6 transition-colors hover:bg-accent/30">
@@ -391,7 +391,7 @@ const Index = () => {
                 <GraduationCap className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">B.Tech BME (MI)</div>
-                  <div className="text-xs text-muted-foreground">SRMIST Chennai · 2024–2028 · CGPA 9.0</div>
+                  <div className="text-xs text-muted-foreground">SRMIST Chennai · 2024–2028 · CGPA 9.03</div>
                 </div>
               </div>
               <div className="card-paper flex items-start gap-3 tilt">
@@ -485,7 +485,7 @@ const Index = () => {
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { title: "B.Tech — Biomedical Engineering (MI)", school: "SRM Institute of Science & Technology", date: "2024 — 2028 (expected)", score: "CGPA 9.0" },
+            { title: "B.Tech — Biomedical Engineering (MI)", school: "SRM Institute of Science & Technology", date: "2024 — 2028 (expected)", score: "CGPA 9.03 (after 4 semesters)" },
             { title: "Class XII — PCB + IP", school: "Vydehi School of Excellence", date: "May 2023", score: "86.8%" },
             { title: "Class X — Science", school: "Vydehi School of Excellence", date: "May 2021", score: "93%" },
           ].map((e) => (
