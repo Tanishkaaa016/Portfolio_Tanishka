@@ -539,17 +539,31 @@ const Index = () => {
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025" },
+            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025", href: matlabCertAsset.url },
             { icon: Cpu, title: "BIO101", sub: "Molecular & Cellular Biology · Saylor Academy" },
-          ].map(({ icon: Icon, title, sub }) => (
+          ].map(({ icon: Icon, title, sub, href }) => (
             <Reveal key={title}>
-              <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
-                <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
-                  <Icon className="h-5 w-5 text-primary" />
+              {href ? (
+                <a href={href} target="_blank" rel="noreferrer" className="block card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt group">
+                  <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="font-display text-lg leading-snug flex items-center gap-1">
+                    {title}
+                    <ArrowUpRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <div className="text-sm text-muted-foreground mt-1">{sub}</div>
+                  <div className="text-xs text-primary mt-2">View certificate →</div>
+                </a>
+              ) : (
+                <div className="card-paper h-full transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] tilt">
+                  <div className="h-10 w-10 rounded-full bg-accent/70 flex items-center justify-center mb-4">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="font-display text-lg leading-snug">{title}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{sub}</div>
                 </div>
-                <div className="font-display text-lg leading-snug">{title}</div>
-                <div className="text-sm text-muted-foreground mt-1">{sub}</div>
-              </div>
+              )}
             </Reveal>
           ))}
         </div>
