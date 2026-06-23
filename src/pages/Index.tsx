@@ -39,15 +39,15 @@ const projects = [
   {
     name: "EEG Seizure Detection",
     tag: "Signals",
-    blurb: "Random Forest baseline → XGBoost on segmented EEG features.",
-    href: "https://github.com/Tanishkaaa016/EEG-Seizure-ML-Baseline-and-Improvement",
-    chips: ["XGBoost", "EEG"],
+    blurb: "Sample Entropy features + Random Forest for epileptic seizure detection.",
+    href: "https://github.com/Tanishkaaa016/EEG-Based-Epileptic-Seizure-Detection-Using-Sample-Entropy-and-Random-Forest-Classification",
+    chips: ["Random Forest", "Sample Entropy", "EEG"],
     details: [
-      "Windowed EEG signals and extracted time/frequency features.",
-      "Improved on a Random Forest baseline with tuned XGBoost.",
-      "Evaluated on recall to minimise missed seizure events.",
+      "Segmented EEG recordings and computed Sample Entropy as the core feature.",
+      "Trained a Random Forest classifier to flag seizure vs. non-seizure windows.",
+      "Evaluated with recall-focused metrics to minimise missed seizure events.",
     ],
-    highlights: ["Feature-engineered EEG", "Baseline → boosted model", "Recall-aware evaluation"],
+    highlights: ["Sample Entropy features", "Random Forest classifier", "Recall-aware evaluation"],
   },
   {
     name: "ECG Filtering",
@@ -109,6 +109,17 @@ const experience = [
       "Ran alumni meet-ups end-to-end: publicity, hosting, logistics.",
       "Created outreach content — invites, recaps, speaker spotlights.",
       "Bridged student volunteers and the directorate during events.",
+    ],
+  },
+  {
+    date: "May 2026 — Present",
+    role: "Biomedical Intern",
+    org: "Sri Sathya Sai Institute of Higher Medical Sciences, Whitefield, Bangalore",
+    note: "Hands-on biomedical engineering exposure in a tertiary-care hospital.",
+    details: [
+      "Shadowing biomedical engineers across critical-care medical equipment.",
+      "Learning calibration, preventive maintenance and safety protocols on clinical devices.",
+      "Observing how hospital workflows shape healthtech requirements.",
     ],
   },
   {
