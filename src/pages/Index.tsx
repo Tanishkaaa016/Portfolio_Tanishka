@@ -24,19 +24,6 @@ const projects = [
     highlights: ["Multi-class tumour classification", "Attention over gene expression", "Interpretable biomarker shortlist"],
   },
   {
-    name: "Medpath",
-    tag: "Clinical ML",
-    blurb: "Symptom-to-diagnosis triage app powered by an ANN model and Flask.",
-    href: "https://github.com/Tanishkaaa016/Medpath",
-    chips: ["Flask", "ANN"],
-    details: [
-      "ANN trained on symptom–diagnosis data to suggest likely conditions.",
-      "Served via a simple Flask form for non-technical users.",
-      "A small prototype for explainable clinical decision support.",
-    ],
-    highlights: ["End-to-end ML app", "Symptom-driven inference", "Friendly triage UI"],
-  },
-  {
     name: "EEG Seizure Detection",
     tag: "Signals",
     blurb: "Sample Entropy features + Random Forest for epileptic seizure detection.",
@@ -48,6 +35,19 @@ const projects = [
       "Evaluated with recall-focused metrics to minimise missed seizure events.",
     ],
     highlights: ["Sample Entropy features", "Random Forest classifier", "Recall-aware evaluation"],
+  },
+  {
+    name: "Medpath",
+    tag: "Clinical ML",
+    blurb: "Symptom-to-diagnosis triage app powered by an ANN model and Flask.",
+    href: "https://github.com/Tanishkaaa016/Medpath",
+    chips: ["Flask", "ANN"],
+    details: [
+      "ANN trained on symptom–diagnosis data to suggest likely conditions.",
+      "Served via a simple Flask form for non-technical users.",
+      "A small prototype for explainable clinical decision support.",
+    ],
+    highlights: ["End-to-end ML app", "Symptom-driven inference", "Friendly triage UI"],
   },
   {
     name: "ECG Filtering",
