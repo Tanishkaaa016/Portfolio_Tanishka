@@ -8,6 +8,7 @@ import BlobCursor from "@/components/portfolio/BlobCursor";
 import Reveal from "@/components/portfolio/Reveal";
 import Typewriter from "@/components/portfolio/Typewriter";
 import useActiveSection from "@/components/portfolio/useActiveSection";
+import matlabCertAsset from "@/assets/certificate_matlab.pdf.asset.json";
 
 const projects = [
   {
