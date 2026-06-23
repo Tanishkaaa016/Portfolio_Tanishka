@@ -8,7 +8,7 @@ import BlobCursor from "@/components/portfolio/BlobCursor";
 import Reveal from "@/components/portfolio/Reveal";
 import Typewriter from "@/components/portfolio/Typewriter";
 import useActiveSection from "@/components/portfolio/useActiveSection";
-import matlabCertAsset from "@/assets/certificate_matlab.pdf.asset.json";
+import matlabCert from "@/assets/certificate_matlab.pdf";
 
 const projects = [
   {
@@ -539,7 +539,7 @@ const Index = () => {
         </Reveal>
         <div className="grid md:grid-cols-3 gap-5">
           {[
-            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025", href: matlabCertAsset.url },
+            { icon: Microscope, title: "MATLAB Onramp", sub: "MathWorks · Jun 2025", href: matlabCert },
             { icon: Cpu, title: "BIO101", sub: "Molecular & Cellular Biology · Saylor Academy" },
           ].map(({ icon: Icon, title, sub, href }) => (
             <Reveal key={title}>
