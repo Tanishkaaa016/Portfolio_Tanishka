@@ -79,6 +79,17 @@ const projects = [
 
 const experience = [
   {
+    date: "Jun 2026 — Present",
+    role: "Biomedical Intern",
+    org: "Sri Sathya Sai Institute of Higher Medical Sciences, Whitefield, Bangalore",
+    note: "Hands-on biomedical engineering exposure in a tertiary-care hospital.",
+    details: [
+      "Shadowing biomedical engineers across critical-care medical equipment.",
+      "Learning calibration, preventive maintenance and safety protocols on clinical devices.",
+      "Observing how hospital workflows shape healthtech requirements.",
+    ],
+  },
+  {
     date: "Oct 2025 — Present",
     role: "R&D Associate Head",
     org: "Placfv's, SRMIST Placement Team",
@@ -109,17 +120,6 @@ const experience = [
       "Ran alumni meet-ups end-to-end: publicity, hosting, logistics.",
       "Created outreach content — invites, recaps, speaker spotlights.",
       "Bridged student volunteers and the directorate during events.",
-    ],
-  },
-  {
-    date: "May 2026 — Present",
-    role: "Biomedical Intern",
-    org: "Sri Sathya Sai Institute of Higher Medical Sciences, Whitefield, Bangalore",
-    note: "Hands-on biomedical engineering exposure in a tertiary-care hospital.",
-    details: [
-      "Shadowing biomedical engineers across critical-care medical equipment.",
-      "Learning calibration, preventive maintenance and safety protocols on clinical devices.",
-      "Observing how hospital workflows shape healthtech requirements.",
     ],
   },
   {
