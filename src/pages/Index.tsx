@@ -606,7 +606,7 @@ const Index = () => {
               <ul className="space-y-3">
                 {[
                   { icon: Mail, label: "Email", val: "tanishkabajpai2005@gmail.com", href: "mailto:tanishkabajpai2005@gmail.com" },
-                  { icon: Linkedin, label: "LinkedIn", val: "/in/tanishka-bajpai", href: "https://linkedin.com" },
+                  { icon: Linkedin, label: "LinkedIn", val: "/in/tanishka-bajpai", href: "https://www.linkedin.com/in/tanishka-bajpai/"},
                   { icon: Github, label: "GitHub", val: "@Tanishkaaa016", href: "https://github.com/Tanishkaaa016" },
                   { icon: MapPin, label: "Based in", val: "Bengaluru / Chennai, India" },
                 ].map(({ icon: Icon, label, val, href }) => {
