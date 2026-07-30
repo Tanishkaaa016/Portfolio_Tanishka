@@ -80,7 +80,7 @@ const projects = [
 
 const experience = [
   {
-    date: "Jun 2026 — Present",
+    date: "Jun 2026 — Jul 2026",
     role: "Biomedical Intern",
     org: "Sri Sathya Sai Institute of Higher Medical Sciences, Whitefield, Bangalore",
     note: "Hands-on biomedical engineering exposure in a tertiary-care hospital.",
