@@ -12,6 +12,24 @@ import matlabCert from "@/assets/certificate matlab.pdf";
 
 const projects = [
   {
+    name: "EarSense",
+    tag: "Minor & Major Project",
+    blurb:
+      "An ongoing research project exploring reduced-channel P300 EEG and wearable neurotechnology.",
+    href: "#",
+    chips: ["EEG", "P300", "Signal Processing", "Wearable Neurotech"],
+    details: [
+      "Investigating whether a reduced four-channel EEG configuration can preserve sufficient P300 information compared with a larger reference configuration.",
+      "Analysing P300 signals through preprocessing, feature extraction, waveform comparison and machine-learning-based classification.",
+      "Using the feasibility findings to guide the development of a compact wearable EEG acquisition system for the subsequent project phase.",
+    ],
+    highlights: [
+      "Minor & Major Project",
+      "4-channel EEG feasibility analysis",
+      "P300 signal classification",
+    ],
+  },
+  {
     name: "Geneatlas",
     tag: "Bioinformatics",
     blurb: "Pan-cancer RNA-Seq classifier with self-attention + SHAP biomarker discovery.",
