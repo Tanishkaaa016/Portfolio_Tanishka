@@ -114,13 +114,14 @@ const experience = [
     org: "Placfv's, SRMIST Placement Team",
     note: "Industry research, recruiter outreach, hiring strategy support.",
     details: [
-      "Map hiring trends across industries and target roles.",
-      "Coordinate recruiter outreach and placement leads.",
-      "Support seniors on overall hiring strategy.",
+      "Conducted industry, company and recruitment trend research.",
+      "Researched recruiters and HR professionals for corporate outreach.",
+      "Led recruitment processes across multiple domains.",
+      "Coordinated volunteers, task delegation and cross-domain communication.",
     ],
   },
   {
-    date: "Jan 2025 — Present",
+    date: "Jan 2025 — Aug 2026",
     role: "Content Member",
     org: "Team SRM Hackathon",
     note: "Content + emcee for SRM Hackathon 2025; scripts, copy, comms.",
